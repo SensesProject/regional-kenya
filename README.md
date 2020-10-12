@@ -1,6 +1,6 @@
-# Dutch page
+# Kenya page
 
-[https://dev.climatescenarios.org/dutch/](https://dev.climatescenarios.org/dutch/)
+[https://dev.climatescenarios.org/kenya/](https://dev.climatescenarios.org/kenya/)
 
 ## Build Setup
 
