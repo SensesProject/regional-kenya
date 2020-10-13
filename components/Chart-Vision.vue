@@ -1,5 +1,5 @@
 <template>
-  <div ref="vis" class="vis-container">
+  <div ref="vis" class="vis-container graphic graphic--vision">
     <svg
       class="vis"
       :width="width + 'px'"
@@ -13,10 +13,10 @@
       <circle :cx="width / 2" :cy="height / 2" :r="((width - margin.top) / 3 * 2) / 2" class="vverijssel" />
       <circle :cx="width / 2" :cy="height / 2" :r="((width - margin.top) / 3 * 1) / 2" class="netherlands" /> -->
 
-      <text :x="width / 2" :y="10" text-anchor="middle" class="sector">land use and agriculture</text>
-      <text :x="width / 2" :y="height" text-anchor="middle" class="sector">nature</text>
-      <text :x="10" :y="height / 2" transform="rotate(-90)" :style="{ 'transform-origin': `${10}px ${height / 2}px` }" text-anchor="middle" class="sector">socioeconomic development</text>
-      <text :x="width - 10" :y="height / 2" transform="rotate(90)" :style="{ 'transform-origin': `${width - 10}px ${height / 2}px` }" text-anchor="middle" class="sector">energy</text>
+      <text :x="width / 2" :y="10" text-anchor="middle" class="sector">Medium/high-end climate change (RCP 6.0)</text>
+      <text :x="width / 2" :y="height" text-anchor="middle" class="sector">Low-end climate change (RCP2.6)</text>
+      <text :x="10" :y="height / 2" transform="rotate(-90)" :style="{ 'transform-origin': `${10}px ${height / 2}px` }" text-anchor="middle" class="sector">Low-level regional collaboration</text>
+      <text :x="width - 10" :y="height / 2" transform="rotate(90)" :style="{ 'transform-origin': `${width - 10}px ${height / 2}px` }" text-anchor="middle" class="sector">High-level regional collaboration</text>
 
       <g v-for="{ x, y, label, rotate, anchor } in points">
         <Point :x="x" :y="y" :label="label" />

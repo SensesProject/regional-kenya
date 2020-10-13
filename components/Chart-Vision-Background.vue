@@ -35,13 +35,16 @@
       return {
         data: [{
           'r': 1,
-          'label': 'Netherlands'
+          'label': 'People'
         }, {
-          'r': 0.6666,
-          'label': 'Overijssel'
+          'r': 0.75,
+          'label': 'Biophysical'
         }, {
-          'r': 0.3333,
-          'label': 'Vecht'
+          'r': 0.5,
+          'label': 'Trade'
+        }, {
+          'r': 0.25,
+          'label': 'Finance'
         }]
       }
     },
@@ -73,32 +76,32 @@
   .areas {
     transition-duration: 0.5s;
     transition-delay: 0s;
-    stroke-opacity: 0.3;
+    stroke-opacity: 1;
   }
 
   .area-4 {
-    fill-opacity: 0.3;
-    stroke: #d8d8d8;
-    stroke-width: 1px;
-    fill: #f5f5f5;
+    fill-opacity: 1;
+    fill: #fafafa;
+    stroke-width: 5px;
+    stroke: #fff;
   }
   .area-3 {
-    fill-opacity: 0.9;
-    stroke: #d8d8d8;
-    stroke-width: 1px;
-    fill: #f5f5f5;
+    fill-opacity: 1;
+    fill: #fafafa;
+    stroke-width: 5px;
+    stroke: #fff;
   }
   .area-2 {
-    fill-opacity: 0.4;
-    stroke: #d8d8d8;
-    stroke-width: 1px;
-    fill: #f5f5f5;
+    fill-opacity: 1;
+    fill: #fafafa;
+    stroke-width: 5px;
+    stroke: #fff;
   }
   .area-1 {
-    fill-opacity: 0.2;
-    stroke: #d8d8d8;
-    stroke-width: 1px;
-    fill: #f5f5f5;
+    fill-opacity: 1;
+    fill: #fafafa;
+    stroke-width: 5px;
+    stroke: #fff;
   }
 
   path {

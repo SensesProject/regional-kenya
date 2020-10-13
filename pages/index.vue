@@ -10,19 +10,25 @@
       </section>
     </div>
     <div class="container">
-      <section class="step">
+      <section class="step step--columns">
         <header>
+          <span class="caption">Part 1</span>
           <h2>Cross-scale scenarios (called Nested scenarios in the LM figure)</h2>
         </header>
-        <p>To develop cross-scale scenarios, we link the development of local scenarios to the Shared Socioeconomic Pathways (SSPs) [hyperlink to the primer]. We use a combined top-down and bottom-up approach (Nilsson et al., 2017) to develop Kenyan scenarios linked to the SSPs, where the top-down element is a set of four SSPs ,  and the bottom-up element includes stakeholder-generated local and regional knowledge concerning future vulnerability to cross-border climate impacts.</p>
-        <p>Local scenarios for Kenya were developed through a co-production process implemented in a workshop series. The co-production process started with the bottom-up element where using brainstorming [hyperlink to the co-production DB] techniques, stakeholders generated information on the relevant socioeconomic drivers for understanding future vulnerabilities to cross-border climate risks. The time horizon was set to 2040-2060. Drivers were prioritized based on the level of importance (to the understanding of future cross-border climate impacts) and uncertainty, i.e. the extent to which the future development of a driver is unclear, vague, or least-predictable. The drivers that scored high on both importance and uncertainty were selected as the key drivers.</p>
-        <p>Then, as the top-down element, the global SSPs were introduced into the process as ‘boundary conditions’ (context scenarios) for the future development of the key driving forces. The overarching question to guide the process was “How could driver x unfold at the local and regional level in the world described in SSP1,3,4, and 5?”. A variation of morphological analysis [hyperlink to the co-production DB] was used to identify plausible future states for the identified drivers. The combination of key drivers and their associated states given each SSP provide the skeleton for the local and regional extensions of the respective SSP.</p>
+        <div class="content">
+          <p>To develop cross-scale scenarios, we link the development of local scenarios to the Shared Socioeconomic Pathways (SSPs) [hyperlink to the primer]. We use a combined top-down and bottom-up approach (Nilsson et al., 2017) to develop Kenyan scenarios linked to the SSPs, where the top-down element is a set of four SSPs ,  and the bottom-up element includes stakeholder-generated local and regional knowledge concerning future vulnerability to cross-border climate impacts.</p>
+          <p>Local scenarios for Kenya were developed through a co-production process implemented in a workshop series. The co-production process started with the bottom-up element where using brainstorming [hyperlink to the co-production DB] techniques, stakeholders generated information on the relevant socioeconomic drivers for understanding future vulnerabilities to cross-border climate risks. The time horizon was set to 2040-2060. Drivers were prioritized based on the level of importance (to the understanding of future cross-border climate impacts) and uncertainty, i.e. the extent to which the future development of a driver is unclear, vague, or least-predictable. The drivers that scored high on both importance and uncertainty were selected as the key drivers.</p>
+          <p>Then, as the top-down element, the global SSPs were introduced into the process as ‘boundary conditions’ (context scenarios) for the future development of the key driving forces. The overarching question to guide the process was “How could driver x unfold at the local and regional level in the world described in SSP1,3,4, and 5?”. A variation of morphological analysis [hyperlink to the co-production DB] was used to identify plausible future states for the identified drivers. The combination of key drivers and their associated states given each SSP provide the skeleton for the local and regional extensions of the respective SSP.</p>
+        </div>
+        <aside class="footnotes">
+          <p>1: To constrain the number of scenarios for consideration and decrease the complexity of the process, it was decided to use only four out of the five SSPs. As SSP2 (Middle of the Road) storyline lacks a certain level of diversity in relation to the other SSPs and represents a business as usual scenario, we decided to exclude SSP2 from our scenario set.</p>
+        </aside>
       </section>
       <section class="graphic graphic--wide">
-        <table>
+        <table class="style">
           <thead>
             <tr>
-              <th>SSPs</th>
+              <th>Key drivers \ SSPs</th>
               <th>SSP1: sustainability</th>
               <th>SSP3: regional rivalry</th>
               <th>SSP4: inequality</th>
@@ -86,22 +92,12 @@
     <div class="container">
       <section class="step">
         <header>
+          <span class="caption">Part 2</span>
           <h2>Narratives and cartoons for the extended SSPs</h2>
         </header>
         <p>In the next step of the scenario process, the research team created narratives for the extended SSPs. Visualizations were also created based on the short versions of narratives for the extended SSPs by a data visualization and graphic design group. We used intuitive logic [hyperlink to the co-production DB] to develop the narratives and presented both narratives and visualizations using scenario-axes technique (van ’t Klooster & van Asselt, 2006).</p>
       </section>
-      <section class="graphic graphic--wide">
-        <table>
-          <tr>
-            <td><img src="img/Regional rivalry-s.jpg" v-tooltip="{ content: 'Regional rivalry is a scenario where Kenya cooperates with neighbouring countries around the common interests and aim to compete against other regional blocs. However, growing nationalist values and intense competition over the scarce resources intensify the rivalry and securitize the relationships between the EAC countries. Access to the technological innovations becomes extremely difficult for Kenya because knowledge sharing practices are securitized, and innovations are strictly patented and expensive.' }" /></td>
-            <td><img src="img/Fossil fueled development_s.jpg" v-tooltip="{ content: 'Fossil-fuelled development is a scenario where regional collaboration in EAC increases with a focus on economic growth and increasing competitiveness in global market. Kenya and neighbours agree on the maximum use of the shared natural resources, but environmental policies including, climate adaptation are not priorities. As a result, climate-induced border conflicts decrease.' }" /></td>
-          </tr>
-          <tr>
-            <td><img src="img/Inequality-s.jpg" v-tooltip="{ content: 'Inequality is a scenario where regional collaboration in the EAC is fragmented and unstable. While Kenya attempts to maintain collaboration, traditional values upsurge in the region leading the neighbouring countries to enhance militarization and securitized societies. Kenya – like most low-income countries – is struggling to provide the minimum life capacity for the poor majority of the population. ' }" /></td>
-            <td><img src="img/Sustainability-s.jpg" v-tooltip="{ content: 'Sustainability is a scenario where regional collaborations towards sustainable development improves within the east African community. Collaborations on natural resource management between Kenya and neighbouring countries ensure preservation and sustainable use of resources and make progress toward resolving cross border conflicts over access to and use of shared resources, especially transboundary water. Clean energy is accessible for a larger share of Kenyan population. ' }" /></td>
-          </tr>
-        </table>
-      </section>
+      <ExtendedSSPs />
       <section class="step">
         <p>Additionally, for each extended SSP, we used the SSP quantifications database (Riahi et al., 2017) to add quantitative projections on economic development (GDP) and population growth (Crespo Cuaresma, 2017; Kc & Lutz, 2017).</p>
       </section>
@@ -109,6 +105,7 @@
     <div class="container">
       <section class="step">
         <header>
+          <span class="caption">Part 3</span>
           <h2>Quantitative enhanced scenarios</h2>
         </header>
         <p>Since the scenarios were constructed to inform adaptation planning to cross-border climate impacts, we also wanted them to include elements of links to outside Kenya. To this end we opted for illustrating such links with global climate impacts modelling outputs. We reviewed future drivers of importance at local and regional scale identified by stakeholders and selected food imports as a key future driver for running climate impact models.</p>
@@ -123,7 +120,7 @@
         <p>The extended SSPs and four pathways through which climate impacts are transmitted across space (Hedlund et al., 2018) were used to structure our analysis frame for the brainstorming session. The guiding question was “What are the most important future cross-border climate impacts (for Kenya) in people, biophysical, trade and finance risk pathways given the extended SSP1,3,4 and 5?”. The time perspective was the same as the one governing the scenario development, i.e. 2040-2060.</p>
       </section>
       <section class="graphic graphic--wide">
-        <table>
+        <table class="style">
           <thead>
             <tr>
               <th>Risk pathway</th>
@@ -169,13 +166,15 @@
     <div class="container">
       <section class="step">
         <header>
+          <span class="caption">Part 4</span>
           <h2>Adaptation options</h2>
         </header>
         <p>In the next step, participants were invited to co-produce adaptation options to address future cross-border climate impacts through a participatory brainstorming [hyperlink to the co-production techniques DB] session. The process of generating adaptation options was focused on the present time and near future. </p>
         <p>After synthesizing the generated adaptation options, we identified the main themes of adaptation options and activities that were echoed along the four risk pathways and across several extended SSPs. We clustered these adaptation options into three key areas of adaptation and recommended those to policy makers to national and local adaptation planners and policy makers for improving Kenya’s adaptation planning at present and near future in order to increase capacity to mitigate/adapt to cross-border climate impacts in 2040-2060-time horizon. </p>
       </section>
+      <ChartVision />
       <section class="graphic graphic--wide">
-        <table>
+        <table class="style">
           <thead>
             <tr>
               <th>Adaptation area</th>
@@ -228,6 +227,7 @@
   import Introduction from '~/components/Introduction'
   import Chart from '~/components/Chart'
   import ChartNetworkInteractive from '~/components/Chart-Network-Interactive'
+  import ExtendedSSPs from '~/components/ExtendedSSPs'
   import IntersectionObserver from 'library/src/components/IntersectionObserver'
   import SensesMeta from 'library/src/components/SensesMeta.vue'
 
@@ -244,7 +244,8 @@
       ChartVision,
       ChartWildcards,
       ChartNetworkInteractive,
-      SensesMeta
+      SensesMeta,
+      ExtendedSSPs
     },
     computed: {
       ...mapState('step', [
@@ -300,6 +301,31 @@
     .step {
       grid-column-start: 1;
       grid-column-end: 3;
+
+      &.step--columns {
+        grid-column-end: 6;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 4rem;
+
+        header {
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+
+        .content {
+          column-count: 2;
+          column-gap: 4rem;
+          grid-column-start: 1;
+          grid-column-end: 5;
+        }
+
+        .footnotes {
+          grid-row-start: 2;
+          grid-column-start: 5;
+          grid-column-end: 6;
+        }
+      }
     }
 
     .wildcards {
@@ -385,6 +411,81 @@
 
       .questions {
         list-style: none;
+      }
+    }
+  }
+
+  table.style {
+    td, th {
+      vertical-align: top;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    thead {
+      th {
+        border-bottom: 1px solid $color-light-gray;
+        padding-bottom: 0.5rem;
+      }
+    }
+
+    tbody {
+      tr:first-child {
+        td {
+          padding-top: 0.5rem;
+        }
+      }
+
+      tr {
+        td {
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 1px solid $color-pale-gray;
+
+          &:first-child {
+            font-weight: bold;
+          }
+        }
+      }
+
+      tr:last-child {
+        td {
+          border: 0;
+        }
+      }
+    }
+  }
+
+  td[colspan="4"] {
+    text-align: center;
+  }
+
+  td[rowspan="2"] {
+    text-align: center;
+
+    // &:first-child {
+    //   padding-right: 2rem;
+    // }
+
+    // &:last-child {
+    //   padding-left: 2rem;
+    // }
+
+    span {
+      writing-mode: vertical-lr;
+      transform: rotate(-180deg);
+    }
+  }
+
+  td.stack {
+    padding: 2rem;
+    div {
+      display: grid;
+      grid-auto-flow: row;
+    }
+
+    &.reverse {
+      div {
+        flex-direction: column-reverse;
       }
     }
   }
