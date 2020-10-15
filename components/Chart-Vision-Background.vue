@@ -1,17 +1,30 @@
 <template>
-  <g :transform="'translate(' + center + ',' + center + ')'">
-    <g v-for="(area, n) in areas" :class="{ 'areas': true }">
-      <circle cx="0" cy="0"
+  <g :transform="'translate(' + center + ',' + center + ')'" class="background">
+    <g v-for="({ r, path, label, tooltip }, n) in areas" class="areas">
+      <circle
+        cx="0"
+        cy="0"
+        v-tooltip="{ content: tooltip }"
         :class="{ ['area-' + (n + 1)]: true }"
-        :r="radius * area.r" />
-      <defs>
+        :r="radius * r" />
+    </g>
+    <line
+      v-for="deg in [0, 90, 180, 270]"
+      :x1="radius"
+      :x2="0"
+      :y1="0"
+      :y2="0"
+      :transform="`rotate(${deg})`"
+      :style="{ 'transform-origin': `${0}px ${0}px` }" />
+    <g v-for="({ r, path, label }, n) in areas">
+      <defs v-if="label">
         <path
           :id="'textPath' + n"
-          :d="area.path" />
+          :d="path" />
       </defs>
-      <text class="areaLabels" :style="{ opacity: 1 }">
+      <text class="areaLabels" v-if="label">
         <textPath :xlink:href="'#textPath' + n" alignment-baseline="hanging" text-anchor="middle" startOffset="50%">
-          {{ area.label }}
+          {{ label }}
         </textPath>
       </text>
     </g>
@@ -31,20 +44,26 @@
         type: Number
       }
     },
-    data: function () {
+    data () {
       return {
         data: [{
           'r': 1,
-          'label': 'People'
+          'label': 'People',
+          tooltip: '<strong class="people">People</strong> pathways which involves the movement of people between countries, like migration and tourism.'
         }, {
-          'r': 0.75,
-          'label': 'Biophysical'
+          'r': 0.80,
+          'label': 'Biophysical',
+          tooltip: '<strong class="biophysical">Biophysical</strong> pathway which encompasses transboundary ecosystems, such as river basins.'
         }, {
-          'r': 0.5,
-          'label': 'Trade'
+          'r': 0.60,
+          'label': 'Trade',
+          tooltip: '<strong class="trade">Trade</strong> pathway which transmits climate risks across international supply chains.'
         }, {
-          'r': 0.25,
-          'label': 'Finance'
+          'r': 0.40,
+          'label': 'Finance',
+          tooltip: '<strong class="finance">Finance</strong> pathway which represents capital flows and climate impacts on assets held overseas.'
+        }, {
+          'r': 0.20
         }]
       }
     },
@@ -74,38 +93,23 @@
   @import "~@/assets/style/global";
 
   .areas {
-    transition-duration: 0.5s;
-    transition-delay: 0s;
     stroke-opacity: 1;
+    fill: #fafafa;
+    stroke-width: 5px;
+    stroke: #fff;
   }
 
-  .area-4 {
-    fill-opacity: 1;
-    fill: #fafafa;
-    stroke-width: 5px;
-    stroke: #fff;
-  }
-  .area-3 {
-    fill-opacity: 1;
-    fill: #fafafa;
-    stroke-width: 5px;
-    stroke: #fff;
-  }
-  .area-2 {
-    fill-opacity: 1;
-    fill: #fafafa;
-    stroke-width: 5px;
-    stroke: #fff;
-  }
-  .area-1 {
-    fill-opacity: 1;
-    fill: #fafafa;
-    stroke-width: 5px;
-    stroke: #fff;
+  .area-5 {
+    fill: #fff;
   }
 
   path {
     fill: none;
+  }
+
+  line {
+    stroke: #fff;
+    stroke-width: 5px;
   }
 
   .areaLabels {
@@ -116,5 +120,15 @@
     text-transform: uppercase;
     letter-spacing: 4px;
   }
+
+  // .background {
+  //   &:hover {
+  //     .areaLabels {
+  //       opacity: 0.7;
+  //     }
+
+
+  //   }
+  // }
 
 </style>

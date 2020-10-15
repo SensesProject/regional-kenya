@@ -22,6 +22,24 @@
     line-height: 1.3;
     display: inline-block;
   }
+
+  strong {
+    &.people {
+      color: getColor(red, 40);
+    }
+
+    &.biophysical {
+      color: getColor(green, 40);
+    }
+
+    &.trade {
+      color: getColor(yellow, 40);
+    }
+
+    &.finance {
+      color: getColor(blue, 40);
+    }
+  }
 }
 
 .tooltip .tooltip-arrow {

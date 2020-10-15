@@ -8,20 +8,18 @@
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
     >
-      <ChartVisionBackground :center="(width) / 2" :radius="(this.height - this.margin.top) / 2" />
-      <!-- <circle :cx="width / 2" :cy="height / 2" :r="((width - margin.top) / 3 * 3) / 2" class="vecht" />
-      <circle :cx="width / 2" :cy="height / 2" :r="((width - margin.top) / 3 * 2) / 2" class="vverijssel" />
-      <circle :cx="width / 2" :cy="height / 2" :r="((width - margin.top) / 3 * 1) / 2" class="netherlands" /> -->
+      <ChartVisionBackground :center="width / 2" :radius="radius" />
+      <ChartImpactsLabels :center="width / 2" :radius="radius + 10" />
 
-      <text :x="width / 2" :y="10" text-anchor="middle" class="sector">Medium/high-end climate change (RCP 6.0)</text>
-      <text :x="width / 2" :y="height" text-anchor="middle" class="sector">Low-end climate change (RCP2.6)</text>
-      <text :x="10" :y="height / 2" transform="rotate(-90)" :style="{ 'transform-origin': `${10}px ${height / 2}px` }" text-anchor="middle" class="sector">Low-level regional collaboration</text>
-      <text :x="width - 10" :y="height / 2" transform="rotate(90)" :style="{ 'transform-origin': `${width - 10}px ${height / 2}px` }" text-anchor="middle" class="sector">High-level regional collaboration</text>
+      <g>
+        <text :x="width / 2" :y="20" text-anchor="middle" class="rcp">Medium/high-end climate change (RCP 6.0)</text>
+        <text :x="width / 2" :y="height - 20" text-anchor="middle" class="rcp" alignment-baseline="hanging" dominant-baseline="hanging">Low-end climate change (RCP2.6)</text>
+        <text :x="20" :y="height / 2" transform="rotate(-90)" :style="{ 'transform-origin': `${10}px ${height / 2}px` }" text-anchor="middle" class="col">Low-level regional collaboration</text>
+        <text :x="width - 20" :y="height / 2" transform="rotate(90)" :style="{ 'transform-origin': `${width - 10}px ${height / 2}px` }" text-anchor="middle" class="col">High-level regional collaboration</text>
+      </g>
 
-      <g v-for="{ x, y, label, rotate, anchor } in points">
-        <Point :x="x" :y="y" :label="label" />
-        <!-- <circle :cx="x" :cy="y" :r="3" class="vision" v-tooltip="{ content: label }" />
-        <text :x="x" :y="y" :text-anchor="anchor" :style="{ 'transform': `rotate(${rotate}deg)`}" :transform-origin="`${x} ${y}`">{{ label }}</text> -->
+      <g>
+        <Point :x="x" :y="y" :label="label" :key="key" v-for="{ x, y, key, label, color } in points" :color="color" />
       </g>
     </svg>
   </div>
@@ -29,9 +27,10 @@
 
 <script>
 import { mapState } from 'vuex'
-import { scaleLinear } from 'd3-scale'
-import { isUndefined, map } from 'lodash'
+import { scaleLinear, scalePoint } from 'd3-scale'
+import { isUndefined, map, forEach } from 'lodash'
 import ChartVisionBackground from '~/components/Chart-Vision-Background'
+import ChartImpactsLabels from '~/components/Chart-Impacts-Labels'
 import Point from '~/components/Helper/Point'
 
 function getCoordinatesForPercent (percent) {
@@ -41,12 +40,13 @@ function getCoordinatesForPercent (percent) {
 }
 
 const scalePercent = scaleLinear()
-  .range([0, 0.25])
-  .domain([0, 100])
+  .range([0, 1])
+  .domain([0, 360])
 
 export default {
   components: {
     ChartVisionBackground,
+    ChartImpactsLabels,
     Point
   },
   data () {
@@ -62,13 +62,22 @@ export default {
     }
   },
   computed: {
+    radius () {
+      return (this.height - this.margin.top) / 2 - 20
+    },
+    x1 () {
+      return this.radius / 5 * 1.5
+    },
+    x2 () {
+      return this.radius / 5 * 4.5
+    },
     ...mapState('vision', [
       'visions'
     ]),
     scaleScope () {
-      return scaleLinear()
-        .range([0, (this.height - this.margin.top) / 2])
-        .domain([0, 100])
+      return scalePoint()
+        .range([this.x1, this.x2])
+        .domain([1, 2, 3, 4])
     },
     scaleX () {
       return scaleLinear()
@@ -76,96 +85,48 @@ export default {
         .domain([0, 9])
     },
     points () {
-      return map(this.visions, ([label, scope, socio, land, energy, nature]) => {
-        const r = this.scaleScope(scope)
+      const points = []
+      forEach(this.visions, ([coords, title, text]) => {
+        for (let i = 0; i < coords.length; i += 2) {
+          const scope = coords[i]
+          const r = this.scaleScope(scope)
 
-        let percent = 0
-        let x = 0
-        let y = 0
-        let rotate = 0
-        let anchor = 'start'
+          const angle = coords[i + 1] - 90
+          const percent = scalePercent(angle)
 
-        if (land && energy || land === 100) {
-          percent = scalePercent(land) - 0.5
           const [_x, _y] = getCoordinatesForPercent(percent)
-          x = (this.width / 2) + _x * r
-          y = (this.height / 2) + _y * r
-          rotate = -45
-          // console.log({ label, land, energy, x, y, _x, _y, scope, r }, land, scalePercent(land), r)
-        } else if (energy && nature || energy) {
-          percent = scalePercent(energy) - 0.25
-          const [_x, _y] = getCoordinatesForPercent(percent)
-          x = (this.width / 2) + _x * r
-          y = (this.height / 2) - _y * r
-          rotate = 45
-        } else if (nature && socio || nature) {
-          percent = scalePercent(nature)
-          const [_x, _y] = getCoordinatesForPercent(percent)
-          x = (this.width / 2) - _x * r
-          y = (this.height / 2) + _y * r
-          rotate = -45
-          anchor = 'end'
-        } else if (socio && land || socio) {
-          percent = scalePercent(socio) + 0.25
-          const [_x, _y] = getCoordinatesForPercent(percent)
-          x = (this.width / 2) + _x * r
-          y = (this.height / 2) - _y * r
-          rotate = 45
-          anchor = 'end'
+          const x = (this.width / 2) + _x * r
+          const y = (this.height / 2) + _y * r
+
+          const tooltip = `<h5>${title}</h5><p>${text}</p>`
+
+          let color
+          switch (scope) {
+            case 1:
+              color = 'blue'
+              break;
+            case 2:
+              color = 'yellow'
+              break;
+            case 3:
+              color = 'green'
+              break;
+            case 4:
+              color = 'red'
+              break;
+          }
+
+          points.push({
+            x,
+            y,
+            key: `${title}-${i}`,
+            label: tooltip,
+            color
+          })
         }
-
-        const t = 5
-
-        let location
-        if (scope < 33 - t) {
-          location = 'It is situated in the Vecht.'
-        } else if (scope >= 33 - t && scope < 33 + t) {
-          location = 'It is situated between the Vecht and the Overijssel.'
-        } else if (scope >= 33 + t && scope < 66 - t) {
-          location = 'It is situated in the Overijssel.'
-        } else if (scope >= 66 + t && scope < 66 + t) {
-          location = 'It is situated between the Overijssel and the Netherlands.'
-        } else {
-          location = 'It is situated in the Netherlands.'
-        }
-
-        let field
-        if (land === 100) {
-          field = 'It is a »land use and agriculture« vision.'
-        } else if (energy === 100) {
-          field = 'It is a »energy« vision.'
-        } else if (energy === 100) {
-          field = 'It is a »energy« vision.'
-        } else if (nature === 100) {
-          field = 'It is a »nature« vision.'
-        } else if (socio === 100) {
-          field = 'It is a »socioeconomic development« vision.'
-        } else if (land && energy && nature && socio) {
-          field = 'It is a »land use and agriculture«, »energy«, »nature« and »socioeconomic development« vision.'
-        } else if (land && energy) {
-          field = 'It is a »land use and agriculture« and »energy« vision.'
-        } else if (energy && nature) {
-          field = 'It is a »energy« and »nature« vision.'
-        } else if (nature && socio) {
-          field = 'It is a »nature« and »socioeconomic development« vision.'
-        } else if (socio && land) {
-          field = 'It is a »socioeconomic development« and »land use and agriculture« vision.'
-        }
-
-        const tooltip = `<h5>${label}</h5><p>Lorem ipsum dolor</p><small>${field} ${location}</small>`
-
-        return {
-          x,
-          y,
-          label: tooltip,
-          rotate,
-          anchor
-        }
-        // const coords = map(line, (y, x) => {
-        //   return [this.scaleX(x), this.scaleY(y)]
-        // })
-        // return `M ${coords.join('L')}`
       })
+
+      return points
     }
   },
   mounted () {
@@ -226,6 +187,11 @@ export default {
     letter-spacing: 0.02em;
     font-size: 0.8rem;
     fill: #333333;
+  }
+
+  .rcp, .col {
+    font-weight: bold;
+    font-size: 1rem;
   }
 
 </style>

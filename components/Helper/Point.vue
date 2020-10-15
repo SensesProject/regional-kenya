@@ -1,5 +1,5 @@
 <template>
-  <g v-tooltip="label">
+  <g v-tooltip="label" :class="color">
     <defs>
       <radialGradient id="myGradient">
         <stop offset="0%" stop-color="#ffd89a" />
@@ -52,6 +52,10 @@ export default {
     isSmall: {
       type: Boolean,
       default: false
+    },
+    color: {
+      type: String,
+      default: ''
     }
   }
 }
@@ -74,9 +78,9 @@ export default {
   circle {
     &.p1 {
       fill: $color-neon;
-      stroke: getColor(neon, 45);
+      stroke: getColor(neon, 40);
       stroke-width: 1px;
-      stroke-opacity: 0.8;
+      stroke-opacity: 0.4;
     }
 
     &.p2 {
@@ -99,6 +103,78 @@ export default {
       stroke: $color-neon;
       stroke-opacity: 1;
       animation: pulse 1.5s ease infinite;
+    }
+  }
+
+  .red {
+    circle {
+      &.p1 {
+        fill: $color-red;
+        stroke: getColor(red, 40);
+      }
+
+      &.p2 {
+        fill: $color-red;
+        stroke: getColor(red, 80);
+      }
+
+      &.p4 {
+        stroke: $color-red;
+      }
+    }
+  }
+
+  .yellow {
+    circle {
+      &.p1 {
+        fill: $color-yellow;
+        stroke: getColor(yellow, 40);
+      }
+
+      &.p2 {
+        fill: $color-yellow;
+        stroke: getColor(yellow, 80);
+      }
+
+      &.p4 {
+        stroke: $color-yellow;
+      }
+    }
+  }
+
+  .green {
+    circle {
+      &.p1 {
+        fill: $color-green;
+        stroke: getColor(green, 40);
+      }
+
+      &.p2 {
+        fill: $color-green;
+        stroke: getColor(green, 80);
+      }
+
+      &.p4 {
+        stroke: $color-green;
+      }
+    }
+  }
+
+  .blue {
+    circle {
+      &.p1 {
+        fill: $color-blue;
+        stroke: getColor(blue, 40);
+      }
+
+      &.p2 {
+        fill: $color-blue;
+        stroke: getColor(blue, 80);
+      }
+
+      &.p4 {
+        stroke: $color-blue;
+      }
     }
   }
 

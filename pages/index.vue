@@ -100,6 +100,14 @@
       <ExtendedSSPs />
       <section class="step">
         <p>Additionally, for each extended SSP, we used the SSP quantifications database (Riahi et al., 2017) to add quantitative projections on economic development (GDP) and population growth (Crespo Cuaresma, 2017; Kc & Lutz, 2017).</p>
+        <p>Sustainability: GDP increases gradually in the sustainability scenario due to transition to a green economy and prioritizing sustainable development over economic growth.</p>
+        <p>Sustainability: population remains steady in mid-term future and decreases slowly in longer run under the sustainability and fossil-fueled development scenarios. Decreased population together with increasing GDP growth results in improved livelihood in these two scenarios.</p>
+        <p>Regional rivalry: GDP growth is extremely low in the regional rivalry scenario due to increasing conflicts, securitization of markets and lack of technologies and resources to assist the country for economic advancement.</p>
+        <p>Regional rivalry: Projections show significant population growth in Kenya given the regional rivalry and inequality scenarios. In both these scenarios, increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
+        <p>Fossil-fueled development: projections show highest GDP growth in the fossil-fueled development scenario due to increasing regional collaboration and partnership coupled with technological advancements which assist Kenya growing economically.</p>
+        <p>Fossil-fueled development: population remains steady in mid-term future and decreases slowly in longer run under the sustainability and fossil-fueled development scenarios. Decreased population together with increasing GDP growth results in improved livelihood in these two scenarios.</p>
+        <p>Inequality: The inequality scenario projects a significantly slow GDP growth, indicating overall dysfunctional economic performance and ever-growing inequalities.</p>
+        <p>Inequality: Projections show significant population growth in Kenya given the regional rivalry and inequality scenarios. In both these scenarios, increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
       </section>
     </div>
     <div class="container">
@@ -112,14 +120,22 @@
         <p>For the analysis here we used data generated within the ISIMIP [hyperlink to ISIMIP] project, more specifically within its second round ISIMIP2b (Frieler et al., 2017). The ISIMIP2b climate scenarios entail both RCP2.6 and RCP6.0 climates from four Earth system models (GFDL-ESM2M (Dunne et al., 2012), HadGEM2-ES (Collins et al., 2011), IPSL-CM5A-LR (Boucher et al., 2020) and MIROC5 (Watanabe et al., 2010) that were run in the context of the CMIP5 project (Taylor et al., 2012).  The crop model data employed here are from the three crop models GEPIC (Folberth et al., 2012; Izaurralde et al., 2006; J. Liu et al., 2007; The EPIC Crop Growth Model, n.d.),,  LPJmL (Bondeau et al., 2007) and PEPIC (W. Liu et al., 2016).</p>
         <p>Running crop models under low-end and medium/high end climate change (RCPs 2.6 [hyperlink to the primer, climate change page] linked to ESSP 1 and 4 and RCP6.0 [hyperlink to the primer, climate change page] linked to ESSP 3 and 5), we developed alternative projections of crop production in the countries exporting essential crops to Kenya  for two time-slices, 2035-2064 and 2070-2099.</p>
       </section>
+      <section class="graphic graphic--changes">
+        <ChartChange type="Corn" />
+        <ChartChange type="Rice" />
+        <ChartChange type="Wheat" />
+        <ButtonChange />
+      </section>
       <section class="step">
         <header>
+          <span class="caption">Part 4</span>
           <h2>Future cross-border climate impacts (called risk assessment in the LM figure)</h2>
         </header>
         <p>In the next step, we used the scenario set as an analytical tool to identify a set of future cross-border climate impacts for Kenya together with stakeholders. The process started with a conversation on the current adaptation strategy of Kenya and after the discussion, Brainstorming [hyperlink to the co-production techniques DB] techniques were used to identify the most important future cross-border climate impacts that are going to need adaptation within Kenya given the alternative future scenarios.</p>
         <p>The extended SSPs and four pathways through which climate impacts are transmitted across space (Hedlund et al., 2018) were used to structure our analysis frame for the brainstorming session. The guiding question was “What are the most important future cross-border climate impacts (for Kenya) in people, biophysical, trade and finance risk pathways given the extended SSP1,3,4 and 5?”. The time perspective was the same as the one governing the scenario development, i.e. 2040-2060.</p>
       </section>
-      <section class="graphic graphic--wide">
+      <ChartVision />
+      <!-- <section class="graphic graphic--wide">
         <table class="style">
           <thead>
             <tr>
@@ -161,7 +177,7 @@
             </tr>
           </tbody>
         </table>
-      </section>
+      </section> -->
     </div>
     <div class="container">
       <section class="step">
@@ -172,7 +188,6 @@
         <p>In the next step, participants were invited to co-produce adaptation options to address future cross-border climate impacts through a participatory brainstorming [hyperlink to the co-production techniques DB] session. The process of generating adaptation options was focused on the present time and near future. </p>
         <p>After synthesizing the generated adaptation options, we identified the main themes of adaptation options and activities that were echoed along the four risk pathways and across several extended SSPs. We clustered these adaptation options into three key areas of adaptation and recommended those to policy makers to national and local adaptation planners and policy makers for improving Kenya’s adaptation planning at present and near future in order to increase capacity to mitigate/adapt to cross-border climate impacts in 2040-2060-time horizon. </p>
       </section>
-      <ChartVision />
       <section class="graphic graphic--wide">
         <table class="style">
           <thead>
@@ -226,10 +241,11 @@
   import Answer from '~/components/Answer'
   import Introduction from '~/components/Introduction'
   import Chart from '~/components/Chart'
-  import ChartNetworkInteractive from '~/components/Chart-Network-Interactive'
+  import ChartChange from '~/components/Chart-Change'
   import ExtendedSSPs from '~/components/ExtendedSSPs'
   import IntersectionObserver from 'library/src/components/IntersectionObserver'
   import SensesMeta from 'library/src/components/SensesMeta.vue'
+  import ButtonChange from '~/components/Button-Change'
 
   export default {
     components: {
@@ -243,9 +259,10 @@
       ChartPathway,
       ChartVision,
       ChartWildcards,
-      ChartNetworkInteractive,
+      ChartChange,
       SensesMeta,
-      ExtendedSSPs
+      ExtendedSSPs,
+      ButtonChange
     },
     computed: {
       ...mapState('step', [
@@ -301,6 +318,10 @@
     .step {
       grid-column-start: 1;
       grid-column-end: 3;
+
+      header {
+        margin-bottom: 2rem;
+      }
 
       &.step--columns {
         grid-column-end: 6;
@@ -371,6 +392,14 @@
       &.graphic--wide {
         grid-column-start: 1;
         grid-column-end: 6;
+      }
+
+      &.graphic--changes {
+        grid-column-start: 1;
+        grid-column-end: 6;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
       }
 
       &.graphic--left {

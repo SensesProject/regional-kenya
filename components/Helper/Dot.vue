@@ -1,5 +1,5 @@
 <template>
-  <g v-tooltip="label">
+  <g v-tooltip="label" :class="color">
     <circle
       class="p2"
       :cx="x + 'px'"
@@ -46,6 +46,10 @@ export default {
     isSmall: {
       type: Boolean,
       default: false
+    },
+    color: {
+      type: String,
+      default: ''
     }
   }
 }
@@ -87,6 +91,21 @@ export default {
       stroke: $color-neon;
       stroke-opacity: 0.4;
       animation: pulse 1.5s ease infinite;
+    }
+
+    &.red {
+      &.p1 {
+        fill: $color-red;
+      }
+
+      &.p3 {
+        fill: $color-red;
+        stroke: $color-red;
+      }
+
+      &.p4 {
+        stroke: $color-red;
+      }
     }
   }
 

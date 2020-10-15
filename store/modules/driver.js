@@ -1,97 +1,77 @@
 import { has, get, set, isUndefined, isNaN, forEach, round, range, map } from 'lodash'
 
-const factors = [
-  [1,-0.6,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0.3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0.2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,-0.5,0,0,0,0,0,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,-0.5,0,0,0,0,0,0,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,-0.5,0,0,1,0.2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0.5,0,0,0,0,0,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0.5,0,0.5,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0.5,-0.9,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0.2,0,0.2,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0.5,0,0,0,0,0,0,0.5,0,0,0,0,1,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-]
-
-const DEFAULTS = {
-  drivers: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-}
-
 const state = () => {
   return {
-    drivers: DEFAULTS.drivers,
-    hover: null
-  }
-}
-
-const getters = {
-  data: (state) => {
-    const LOOPS = 10
-    const DRIVERS = state.drivers.length
-
-    const lines = [state.drivers]
-    for (let l = 1; l < LOOPS; l++) {
-      const ref = lines[l - 1]
-      const line = []
-
-      for (let n = 0; n < DRIVERS; n++) {
-        let value = 0
-
-        for (let d = 0; d < DRIVERS; d++) {
-          value += factors[d][n] * ref[d]
+    changes: {
+      'Corn': {
+        'Mexico': {
+          '2.6': [4.44, 3.90],
+          '6.0': [4.53, 4.05]
+        },
+        'South Africa': {
+          '2.6': [1.83, 0.85],
+          '6.0': [2.64, 3.19]
+        },
+        'Uganda': {
+          '2.6': [0.15, 0.12],
+          '6.0': [0.24, 0.25]
         }
-
-        line.push(round(value, 3))
-      }
-
-      lines.push(line)
-    }
-    return lines
-  },
-  values: (state, getters) => {
-    return map(range(14), (index) => {
-      return map(getters.data, (row) => {
-        return row[index]
-      })
-    })
+      },
+      'Rice': {
+        'Pakistan': {
+          '2.6': [0.77, 0.72],
+          '6.0': [0.81, 0.87]
+        },
+        'Thailand': {
+          '2.6': [4.73, 3.27],
+          '6.0': [5.33, 5.28]
+        }
+      },
+      'Wheat': {
+        'Russia': {
+          '2.6': [8.97, 7.13],
+          '6.0': [10.1, 7.93]
+        },
+        'Argentina': {
+          '2.6': [3.88, 3.11],
+          '6.0': [4.56, 4.69]
+        },
+        'Ukraine': {
+          '2.6': [3.95, 2.62],
+          '6.0': [4.08, 4.1]
+        },
+        'Canada': {
+          '2.6': [6.26, 4.36],
+          '6.0': [6.59, 5.79]
+        }
+      },
+    },
+    hover: null,
+    rcp: '2.6'
   }
 }
 
 const mutations = {
-  TOGGLE_DRIVER (state, index) {
-    state.drivers.splice(index, 1, state.drivers[index] ? 0 : 1);
-  },
   HOVER_DRIVER (state, index) {
     state.hover = index
+  },
+  CHANGE_RCP (state, rcp) {
+    state.rcp = rcp
   }
 }
 
 const actions = {
-  toggleDriver ({ state, commit }, index) {
-    commit('TOGGLE_DRIVER', index)
-  },
   hoverDriver ({ commit }, index) {
     commit('HOVER_DRIVER', index)
+  },
+  changeRCP ({ commit }, rcp) {
+    commit('CHANGE_RCP', rcp)
   }
 }
 
 export default {
   namespaced: true,
   state,
-  getters,
   mutations,
   actions
 }
