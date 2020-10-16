@@ -24,70 +24,7 @@
           <p>1: To constrain the number of scenarios for consideration and decrease the complexity of the process, it was decided to use only four out of the five SSPs. As SSP2 (Middle of the Road) storyline lacks a certain level of diversity in relation to the other SSPs and represents a business as usual scenario, we decided to exclude SSP2 from our scenario set.</p>
         </aside>
       </section>
-      <section class="graphic graphic--wide">
-        <table class="style">
-          <thead>
-            <tr>
-              <th>Key drivers \ SSPs</th>
-              <th>SSP1: sustainability</th>
-              <th>SSP3: regional rivalry</th>
-              <th>SSP4: inequality</th>
-              <th>SSP5: fossil fuelled development</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Shared natural resources</td>
-              <td>Collaborative management of shared natural resources</td>
-              <td>Isolated planning for the use of shared natural resources</td>
-              <td>Some countries use the shared natural resources more than other shareholders (high disparities)</td>
-              <td>Increased use and harvest of natural resources</td>
-            </tr>
-            <tr>
-              <td>Technology transfer</td>
-              <td>Increased use of green tech and renewables</td>
-              <td>Investments in research and knowledge creation in local and national institutions, and high costs of access to knowledge</td>
-              <td>Increased capacity gap btw high- and low-income to access knowledge and technology</td>
-              <td>Advanced exploration and development of fossil fuel technologies</td>
-            </tr>
-            <tr>
-              <td>Knowledge management systems</td>
-              <td>Increased research on enhanced governance and robust information systems</td>
-              <td>Poor knowledge sharing practices internationally and externally, and increased knowledge gaps</td>
-              <td>Disparities in access and contribution to knowledge creation</td>
-              <td>Increased research on fossil fuel-based development and infrastructures (roads, ports, etc.)</td>
-            </tr>
-            <tr>
-              <td>Policy implementation</td>
-              <td>Effective implementation of sustainability policies</td>
-              <td>Poor attention to regional and global policies and increased attention to national and local policies</td>
-              <td>Disparities in policy implementation between countries</td>
-              <td>Strong policies on economic development but weak in sustainability</td>
-            </tr>
-            <tr>
-              <td>Import of food</td>
-              <td>Slightly decreases</td>
-              <td>Decreases for trans-continental, and increases from neighbouring countries</td>
-              <td>Maintains steady, while rich benefits from imports, and masses do not</td>
-              <td>Strong increases in short- and medium term, and stabilising in longer run</td>
-            </tr>
-            <tr>
-              <td>Regional collaboration</td>
-              <td>Increases and improves</td>
-              <td>Some collaboration in short-term, but as rivalry increases, collaboration decreases</td>
-              <td>Elite minorities collaborate, and regional blocs try to unite</td>
-              <td>Increases</td>
-            </tr>
-            <tr>
-              <td>Population</td>
-              <td>Slightly decrease</td>
-              <td>Continues growing</td>
-              <td>Continues growing</td>
-              <td>Slightly decreases</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+      <TableSSPDriver />
     </div>
     <div class="container">
       <section class="step">
@@ -98,27 +35,46 @@
         <p>In the next step of the scenario process, the research team created narratives for the extended SSPs. Visualizations were also created based on the short versions of narratives for the extended SSPs by a data visualization and graphic design group. We used intuitive logic [hyperlink to the co-production DB] to develop the narratives and presented both narratives and visualizations using scenario-axes technique (van ’t Klooster & van Asselt, 2006).</p>
       </section>
       <ExtendedSSPs />
-      <section class="step">
-        <p>Additionally, for each extended SSP, we used the SSP quantifications database (Riahi et al., 2017) to add quantitative projections on economic development (GDP) and population growth (Crespo Cuaresma, 2017; Kc & Lutz, 2017).</p>
-        <p>Sustainability: GDP increases gradually in the sustainability scenario due to transition to a green economy and prioritizing sustainable development over economic growth.</p>
-        <p>Sustainability: population remains steady in mid-term future and decreases slowly in longer run under the sustainability and fossil-fueled development scenarios. Decreased population together with increasing GDP growth results in improved livelihood in these two scenarios.</p>
-        <p>Regional rivalry: GDP growth is extremely low in the regional rivalry scenario due to increasing conflicts, securitization of markets and lack of technologies and resources to assist the country for economic advancement.</p>
-        <p>Regional rivalry: Projections show significant population growth in Kenya given the regional rivalry and inequality scenarios. In both these scenarios, increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
-        <p>Fossil-fueled development: projections show highest GDP growth in the fossil-fueled development scenario due to increasing regional collaboration and partnership coupled with technological advancements which assist Kenya growing economically.</p>
-        <p>Fossil-fueled development: population remains steady in mid-term future and decreases slowly in longer run under the sustainability and fossil-fueled development scenarios. Decreased population together with increasing GDP growth results in improved livelihood in these two scenarios.</p>
-        <p>Inequality: The inequality scenario projects a significantly slow GDP growth, indicating overall dysfunctional economic performance and ever-growing inequalities.</p>
-        <p>Inequality: Projections show significant population growth in Kenya given the regional rivalry and inequality scenarios. In both these scenarios, increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
-      </section>
     </div>
     <div class="container">
-      <section class="step">
+      <section class="step step--ssp">
+        <IntersectionObserver :step="0" :noStyling="true" classes="isActive">
+          <p>Additionally, for each extended SSP, we used the SSP quantifications database (Riahi et al., 2017) to add quantitative projections on economic development (GDP) and population growth (Crespo Cuaresma, 2017; Kc & Lutz, 2017).</p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="1" :noStyling="true" :classes="this.ssp === 'SSP1' ? 'isActive' : ''">
+          <h3>SSP 1: Sustainability</h3>
+          <p>GDP increases gradually in the sustainability scenario due to transition to a green economy and prioritizing sustainable development over economic growth.</p>
+          <p>population remains steady in mid-term future and decreases slowly in longer run under the sustainability and fossil-fueled development scenarios. Decreased population together with increasing GDP growth results in improved livelihood in these two scenarios.</p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="3" :noStyling="true" :classes="this.ssp === 'SSP3' ? 'isActive' : ''">
+          <h3>SSP 3: Regional rivalry</h3>
+          <p>GDP growth is extremely low in the regional rivalry scenario due to increasing conflicts, securitization of markets and lack of technologies and resources to assist the country for economic advancement.</p>
+          <p>Projections show significant population growth in Kenya given the regional rivalry and inequality scenarios. In both these scenarios, increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="5" :noStyling="true" :classes="this.ssp === 'SSP5' ? 'isActive' : ''">
+          <h3>SSP 5: Fossil-fueled development</h3>
+          <p>Projections show highest GDP growth in the fossil-fueled development scenario due to increasing regional collaboration and partnership coupled with technological advancements which assist Kenya growing economically.</p>
+          <p>Population remains steady in mid-term future and decreases slowly in longer run under the sustainability and fossil-fueled development scenarios. Decreased population together with increasing GDP growth results in improved livelihood in these two scenarios.</p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="4" :noStyling="true" :classes="this.ssp === 'SSP4' ? 'isActive' : ''">
+          <h3>SSP 4: Inequality</h3>
+          <p>The inequality scenario projects a significantly slow GDP growth, indicating overall dysfunctional economic performance and ever-growing inequalities.</p>
+          <p>Projections show significant population growth in Kenya given the regional rivalry and inequality scenarios. In both these scenarios, increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
+        </IntersectionObserver>
+      </section>
+      <ChartTimes />
+    </div>
+    <div class="container">
+      <section class="step step--columns">
         <header>
           <span class="caption">Part 3</span>
           <h2>Quantitative enhanced scenarios</h2>
         </header>
-        <p>Since the scenarios were constructed to inform adaptation planning to cross-border climate impacts, we also wanted them to include elements of links to outside Kenya. To this end we opted for illustrating such links with global climate impacts modelling outputs. We reviewed future drivers of importance at local and regional scale identified by stakeholders and selected food imports as a key future driver for running climate impact models.</p>
-        <p>For the analysis here we used data generated within the ISIMIP [hyperlink to ISIMIP] project, more specifically within its second round ISIMIP2b (Frieler et al., 2017). The ISIMIP2b climate scenarios entail both RCP2.6 and RCP6.0 climates from four Earth system models (GFDL-ESM2M (Dunne et al., 2012), HadGEM2-ES (Collins et al., 2011), IPSL-CM5A-LR (Boucher et al., 2020) and MIROC5 (Watanabe et al., 2010) that were run in the context of the CMIP5 project (Taylor et al., 2012).  The crop model data employed here are from the three crop models GEPIC (Folberth et al., 2012; Izaurralde et al., 2006; J. Liu et al., 2007; The EPIC Crop Growth Model, n.d.),,  LPJmL (Bondeau et al., 2007) and PEPIC (W. Liu et al., 2016).</p>
-        <p>Running crop models under low-end and medium/high end climate change (RCPs 2.6 [hyperlink to the primer, climate change page] linked to ESSP 1 and 4 and RCP6.0 [hyperlink to the primer, climate change page] linked to ESSP 3 and 5), we developed alternative projections of crop production in the countries exporting essential crops to Kenya  for two time-slices, 2035-2064 and 2070-2099.</p>
+        <div class="content">
+          <p>Since the scenarios were constructed to inform adaptation planning to cross-border climate impacts, we also wanted them to include elements of links to outside Kenya. To this end we opted for illustrating such links with global climate impacts modelling outputs. We reviewed future drivers of importance at local and regional scale identified by stakeholders and selected food imports as a key future driver for running climate impact models.</p>
+          <p>For the analysis here we used data generated within the ISIMIP [hyperlink to ISIMIP] project, more specifically within its second round ISIMIP2b (Frieler et al., 2017). The ISIMIP2b climate scenarios entail both RCP2.6 and RCP6.0 climates from four Earth system models (GFDL-ESM2M (Dunne et al., 2012), HadGEM2-ES (Collins et al., 2011), IPSL-CM5A-LR (Boucher et al., 2020) and MIROC5 (Watanabe et al., 2010) that were run in the context of the CMIP5 project (Taylor et al., 2012).  The crop model data employed here are from the three crop models GEPIC (Folberth et al., 2012; Izaurralde et al., 2006; J. Liu et al., 2007; The EPIC Crop Growth Model, n.d.),,  LPJmL (Bondeau et al., 2007) and PEPIC (W. Liu et al., 2016).</p>
+          <p>Running crop models under low-end and medium/high end climate change (RCPs 2.6 [hyperlink to the primer, climate change page] linked to ESSP 1 and 4 and RCP6.0 [hyperlink to the primer, climate change page] linked to ESSP 3 and 5), we developed alternative projections of crop production in the countries exporting essential crops to Kenya  for two time-slices, 2035-2064 and 2070-2099.</p>
+        </div>
       </section>
       <section class="graphic graphic--changes">
         <ChartChange type="Corn" />
@@ -242,7 +198,9 @@
   import Introduction from '~/components/Introduction'
   import Chart from '~/components/Chart'
   import ChartChange from '~/components/Chart-Change'
+  import ChartTimes from '~/components/Chart-Times'
   import ExtendedSSPs from '~/components/ExtendedSSPs'
+  import TableSSPDriver from '~/components/TableSSPDriver'
   import IntersectionObserver from 'library/src/components/IntersectionObserver'
   import SensesMeta from 'library/src/components/SensesMeta.vue'
   import ButtonChange from '~/components/Button-Change'
@@ -262,25 +220,27 @@
       ChartChange,
       SensesMeta,
       ExtendedSSPs,
-      ButtonChange
+      ButtonChange,
+      TableSSPDriver,
+      ChartTimes
     },
     computed: {
-      ...mapState('step', [
-        'step',
-        'text'
+      ...mapState('time', [
+        'ssp'
       ])
     },
     methods: {
       ...mapActions('step', [
         'setStep'
       ]),
-      scrollTo (id) {
-        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-      }
+      ...mapActions('time', [
+        'setSSP'
+      ])
     },
     mounted () {
       this.$on('step', (step) => {
-        this.setStep(step)
+        this.setSSP(`SSP${step}`)
+        // this.setStep(step)
       })
     }
   }
@@ -321,6 +281,20 @@
 
       header {
         margin-bottom: 2rem;
+      }
+
+      &.step--ssp {
+        display: grid;
+        grid-row-gap: 4rem;
+
+        & > * {
+          opacity: 0.3;
+          transition: opacity 0.3s;
+
+          &.isActive {
+            opacity: 1;
+          }
+        }
       }
 
       &.step--columns {
@@ -407,6 +381,15 @@
         grid-column-end: 4;
       }
 
+      &.graphic--times {
+        grid-column-start: 3;
+        grid-column-end: 6;
+        display: grid;
+        height: 70vh;
+        grid-row-gap: 2rem;
+        align-items: start;
+      }
+
       &.graphic--right {
         grid-column-start: 4;
         grid-column-end: 6;
@@ -451,6 +434,7 @@
       padding-right: 1rem;
     }
     thead {
+      padding-bottom: 5px;
       th {
         border-bottom: 1px solid $color-light-gray;
         padding-bottom: 0.5rem;
@@ -473,6 +457,16 @@
           &:first-child {
             font-weight: bold;
           }
+        }
+
+        &:first-child td {
+          // background-color: red;
+          border-radius: 5px 5px 0 0;
+        }
+
+        &:last-child td {
+          // background-color: red;
+          border-radius: 0 0 5px 5px;
         }
       }
 

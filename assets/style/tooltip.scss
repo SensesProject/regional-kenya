@@ -1,6 +1,12 @@
 .tooltip {
   display: block !important;
   z-index: 10000;
+
+  &.blue {
+    .tooltip-inner {
+      color: $color-neon;
+    }
+  }
 }
 
 .tooltip .tooltip-inner {
