@@ -49,19 +49,19 @@
         data: [{
           'r': 1,
           'label': 'People',
-          tooltip: '<strong class="people">People</strong> pathways which involves the movement of people between countries, like migration and tourism.'
+          tooltip: 'People pathways which involves the movement of people between countries, like migration and tourism.'
         }, {
           'r': 0.80,
           'label': 'Biophysical',
-          tooltip: '<strong class="biophysical">Biophysical</strong> pathway which encompasses transboundary ecosystems, such as river basins.'
+          tooltip: 'Biophysical pathway which encompasses transboundary ecosystems, such as river basins.'
         }, {
           'r': 0.60,
           'label': 'Trade',
-          tooltip: '<strong class="trade">Trade</strong> pathway which transmits climate risks across international supply chains.'
+          tooltip: 'Trade pathway which transmits climate risks across international supply chains.'
         }, {
           'r': 0.40,
           'label': 'Finance',
-          tooltip: '<strong class="finance">Finance</strong> pathway which represents capital flows and climate impacts on assets held overseas.'
+          tooltip: 'Finance pathway which represents capital flows and climate impacts on assets held overseas.'
         }, {
           'r': 0.20
         }]

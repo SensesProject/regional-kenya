@@ -111,20 +111,6 @@ export default {
           } else if (angle < 270) { // SSP 3
             color = 'red'
           }
-          // switch (angle) {
-          //   case 1:
-          //     color = 'blue'
-          //     break;
-          //   case 2:
-          //     color = 'yellow'
-          //     break;
-          //   case 3:
-          //     color = 'green'
-          //     break;
-          //   case 4:
-          //     color = 'red'
-          //     break;
-          // }
 
           points.push({
             x,

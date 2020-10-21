@@ -12,7 +12,8 @@ const visions = [
   [[2, 300], 'Limited import and export markets', 'under certain conditions (e.g. in the extended SSP3) imports might be restricted as countries sought to meet domestic demands first or trade with more ‘friendly’ nations. Food imports is an obvious example given in this case.'],
   [[1, 40, 1, 340, 1, 120], 'Reduced official development assistance (ODA)', 'It is anticipated that under conditions of reduced global and regional collaboration, climate change impacts in ODA donor countries would lead them to redistribute resources domestically.'],
   [[1, 220, 1, 300], 'Reduced Foreign direct investment (FDI)', 'Foreign direct investment (FDI) would be less likely to flow into Kenya as investors sought less politically risky investments.'],
-  [[1, 150], 'Reduced green climate funds', 'In a more sustainable world (e.g. the extended SSP1), access to dedicated green climate funds would diminish, given that Kenya would be expected to have become a middle-income country with less access to such concessional finance.']
+  [[1, 150], 'Reduced green climate funds', 'In a more sustainable world (e.g. the extended SSP1), access to dedicated green climate funds would diminish, given that Kenya would be expected to have become a middle-income country with less access to such concessional finance.'],
+  [[4, 230], 'Cross-border disease transmission', 'Cross-border disease transmission was identified as a potential future impact with strong correlation with increasing migration and the movement of people across borders.']
 ]
 
 const state = () => {
