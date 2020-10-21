@@ -92,49 +92,6 @@
         <p>The extended SSPs and four pathways through which climate impacts are transmitted across space (Hedlund et al., 2018) were used to structure our analysis frame for the brainstorming session. The guiding question was “What are the most important future cross-border climate impacts (for Kenya) in people, biophysical, trade and finance risk pathways given the extended SSP1,3,4 and 5?”. The time perspective was the same as the one governing the scenario development, i.e. 2040-2060.</p>
       </section>
       <ChartVision />
-      <!-- <section class="graphic graphic--wide">
-        <table class="style">
-          <thead>
-            <tr>
-              <th>Risk pathway</th>
-              <th>Extended SSP1: Sustainability</th>
-              <th>Extended SSP3: Regional rivalry</th>
-              <th>Extended SSP4: Inequality</th>
-              <th>Extended SSP5: Fossil-fuelled development</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>People</td>
-              <td>—</td>
-              <td><ul><li>Regional conflicts</li><li>Reduced tourism</li></ul></td>
-              <td><ul><li>Economic migration</li><li>Regional conflicts</li><li>Reduced tourism</li><li>Cross-border disease transmission</li></ul></td>
-              <td><ul><li>Economic migration</li><li>Regional conflicts</li><li>Unsustainable tourism</li></ul></td>
-            </tr>
-            <tr>
-              <td>Biophysical</td>
-              <td>—</td>
-              <td><ul><li>Increased water use by neighbouring countries</li></ul></td>
-              <td><ul><li>Increased water use by neighbouring</li><li>Migration of invasive species</li><li>Migration of wildlife</li><li>Seasonal migration of livestock</li></ul></td>
-              <td><ul><li>Increased water use by neighbouring countries</li><li>Pollution</li></ul></td>
-            </tr>
-            <tr>
-              <td>Trade</td>
-              <td>—</td>
-              <td><ul><li>Limited import and export markets</li></ul></td>
-              <td><ul><li>Reduced demand for high carbon exports</li></ul></td>
-              <td><ul><li>Reduced demand for high carbon exports</li></ul></td>
-            </tr>
-            <tr>
-              <td>Finance</td>
-              <td><ul><li>Reduced official development assistance (ODA)</li><li>Reduced green climate funds</li></ul></td>
-              <td><ul><li>Reduced official development assistance (ODA)</li><li>Reduced foreign direct investments (FDI)</li></ul></td>
-              <td><ul><li>Reduced foreign direct investments (FDI)</li></ul></td>
-              <td><ul><li>Reduced official development assistance (ODA)</li></ul></td>
-            </tr>
-          </tbody>
-        </table>
-      </section> -->
     </div>
     <div class="container">
       <section class="step">
@@ -363,11 +320,7 @@
     }
 
     .wildcard {
-      background-color: #ffffff;
-      border: 1px solid #e4e4e4;
-      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.05);
-      border-radius: 6px;
-      padding: 1rem;
+      @include box();
 
       & > * {
         display: grid;
