@@ -19,7 +19,7 @@
       </g>
 
       <g>
-        <Point :x="x" :y="y" :label="label" :key="key" v-for="{ x, y, key, label, color } in points" :color="color" />
+        <Point :x="x" :y="y" :label="label" :key="key" v-for="{ x, y, key, label, color, angle } in points" :color="color" :data-test="angle" />
       </g>
     </svg>
   </div>
@@ -101,27 +101,38 @@ export default {
           const tooltip = `<h5>${title}</h5><p>${text}</p>`
 
           let color
-          switch (scope) {
-            case 1:
-              color = 'blue'
-              break;
-            case 2:
-              color = 'yellow'
-              break;
-            case 3:
-              color = 'green'
-              break;
-            case 4:
-              color = 'red'
-              break;
+
+          if (angle < 0) { // SSP 5
+            color = 'violet'
+          } else if (angle < 90) { // SSP 1
+            color = 'green'
+          } else if (angle < 180) { // SSP 4
+            color = 'yellow'
+          } else if (angle < 270) { // SSP 3
+            color = 'red'
           }
+          // switch (angle) {
+          //   case 1:
+          //     color = 'blue'
+          //     break;
+          //   case 2:
+          //     color = 'yellow'
+          //     break;
+          //   case 3:
+          //     color = 'green'
+          //     break;
+          //   case 4:
+          //     color = 'red'
+          //     break;
+          // }
 
           points.push({
             x,
             y,
             key: `${title}-${i}`,
             label: tooltip,
-            color
+            color,
+            angle
           })
         }
       })

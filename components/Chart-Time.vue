@@ -26,7 +26,8 @@
             <path :d="d" />
           </g>
           <g v-for="({ d, x, y, isActive, ssp, value }) in elements">
-            <path :d="d" :class="{ isActive }" v-if="isActive" />
+            <path :d="d" class="shadow" v-if="isActive" />
+            <path :d="d" :class="[{ isActive }, ssp]" v-if="isActive" />
             <text v-if="isActive" :x="x + 5" :y="y" dominant-baseline="middle" class="label"><tspan>{{ ssp }}:</tspan><tspan> {{ value }}</tspan></text>
           </g>
         </g>
@@ -209,8 +210,28 @@ export default {
     stroke: getColor(gray, 50);
 
     &.isActive {
-      stroke: $color-neon;
       stroke-width: 2px;
+
+      &.SSP1 {
+        stroke: $color-green;
+      }
+
+      &.SSP3 {
+        stroke: $color-red;
+      }
+
+      &.SSP4 {
+        stroke: $color-yellow;
+      }
+
+      &.SSP5 {
+        stroke: $color-violet;
+      }
+    }
+
+    &.shadow {
+      stroke-width: 4px;
+      stroke: #fff;
     }
   }
 

@@ -1,10 +1,10 @@
-@mixin headline-1 () {
-  font-weight: $font-weight-regular;
-  font-family: $font-sans;
-  font-size: 1.6rem;
-  // font-style: italic;
-  line-height: 1.2;
-  // color: getColor(gray, 10);
+p {
+	@include text-1();
+	margin-bottom: 1.5em;
+}
+
+.figcaption, .footnotes {
+	@include text-note();
 }
 
 .question {
@@ -35,14 +35,13 @@ h3 {
 }
 
 .caption {
-	text-transform: uppercase;
-	font-weight: $font-weight-regular;
-	font-size: 0.7rem;
-	color: getColor(gray, 70);
+	@include headline-4();
 }
 
 p {
-	margin-bottom: 1rem;
+	margin-bottom: 1.5em;
+	line-height: 1.5;
+	font-size: 1em;
 }
 
 #introduction p {
@@ -89,4 +88,12 @@ a {
 
 ul {
 	margin-left: 1em;
+}
+
+i {
+	font-style: normal;
+
+	&.e {
+		font-size: 1.5rem;
+	}
 }

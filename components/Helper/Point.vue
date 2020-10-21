@@ -178,4 +178,22 @@ export default {
     }
   }
 
+  .violet {
+    circle {
+      &.p1 {
+        fill: $color-violet;
+        stroke: getColor(violet, 40);
+      }
+
+      &.p2 {
+        fill: $color-violet;
+        stroke: getColor(violet, 80);
+      }
+
+      &.p4 {
+        stroke: $color-violet;
+      }
+    }
+  }
+
 </style>

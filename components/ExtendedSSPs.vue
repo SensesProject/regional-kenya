@@ -5,22 +5,22 @@
     <span class="col lowcol">Low-level regional collaboration</span>
     <span class="col highcol">High-level regional collaboration</span>
     <figure class="ssp ssp3" v-tooltip="{ offset: 5, content: 'Regional rivalry is a scenario where Kenya cooperates with neighbouring countries around the common interests and aim to compete against other regional blocs. However, growing nationalist values and intense competition over the scarce resources intensify the rivalry and securitize the relationships between the EAC countries. Access to the technological innovations becomes extremely difficult for Kenya because knowledge sharing practices are securitized, and innovations are strictly patented and expensive.' }">
-      <figcaption>Extended SSP3: Regional rivalry</figcaption>
+      <figcaption class="caption">Extended SSP3: Regional rivalry</figcaption>
       <img src="img/Regional rivalry-s.jpg" />
     </figure>
     <figure class="ssp ssp5" v-tooltip="{ offset: 5, content: 'Fossil-fuelled development is a scenario where regional collaboration in EAC increases with a focus on economic growth and increasing competitiveness in global market. Kenya and neighbours agree on the maximum use of the shared natural resources, but environmental policies including, climate adaptation are not priorities. As a result, climate-induced border conflicts decrease.' }">
-      <figcaption>Extended SSP5: Fossil fueled development</figcaption>
+      <figcaption class="caption">Extended SSP5: Fossil fueled development</figcaption>
       <img src="img/Fossil fueled development_s.jpg" />
     </figure>
     <figure class="ssp ssp4" v-tooltip="{ offset: 5, content: 'Inequality is a scenario where regional collaboration in the EAC is fragmented and unstable. While Kenya attempts to maintain collaboration, traditional values upsurge in the region leading the neighbouring countries to enhance militarization and securitized societies. Kenya – like most low-income countries – is struggling to provide the minimum life capacity for the poor majority of the population.' }">
-      <figcaption>Extended SSP4: Inequality</figcaption>
+      <figcaption class="caption">Extended SSP4: Inequality</figcaption>
       <img src="img/Inequality-s.jpg" />
     </figure>
     <figure class="ssp ssp1" v-tooltip="{ offset: 5, content: 'Sustainability is a scenario where regional collaborations towards sustainable development improves within the east African community. Collaborations on natural resource management between Kenya and neighbouring countries ensure preservation and sustainable use of resources and make progress toward resolving cross border conflicts over access to and use of shared resources, especially transboundary water. Clean energy is accessible for a larger share of Kenyan population.' }">
-      <figcaption>Extended SSP1: Sustainability</figcaption>
+      <figcaption class="caption">Extended SSP1: Sustainability</figcaption>
       <img src="img/Sustainability-s.jpg" />
     </figure>
-    <figcaption class="cap">
+    <figcaption class="cap figcaption">
       Figure 3. Extended SSPs across climate change and regional collaboration axes. The visualizations were developed by Leti Arts (www.letiarts.com)
     </figcaption>
   </figure>
@@ -84,12 +84,10 @@ export default {}
         text-align: right;
       }
     }
+  }
 
-    figcaption {
-      font-size: 0.8rem;
-      color: getColor(gray, 30);
-      font-style: italic;
-    }
+  .caption {
+    margin-top: 0.2em;
   }
 
 </style>

@@ -2,9 +2,27 @@
   display: block !important;
   z-index: 10000;
 
-  &.blue {
+  &.green {
     .tooltip-inner {
-      color: $color-neon;
+      color: $color-green;
+    }
+  }
+
+  &.red {
+    .tooltip-inner {
+      color: $color-red;
+    }
+  }
+
+  &.yellow {
+    .tooltip-inner {
+      color: $color-yellow;
+    }
+  }
+
+  &.violet {
+    .tooltip-inner {
+      color: $color-violet;
     }
   }
 }

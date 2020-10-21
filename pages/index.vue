@@ -21,7 +21,7 @@
           <p>Then, as the top-down element, the global SSPs were introduced into the process as ‘boundary conditions’ (context scenarios) for the future development of the key driving forces. The overarching question to guide the process was “How could driver x unfold at the local and regional level in the world described in SSP1,3,4, and 5?”. A variation of morphological analysis [hyperlink to the co-production DB] was used to identify plausible future states for the identified drivers. The combination of key drivers and their associated states given each SSP provide the skeleton for the local and regional extensions of the respective SSP.</p>
         </div>
         <aside class="footnotes">
-          <p>1: To constrain the number of scenarios for consideration and decrease the complexity of the process, it was decided to use only four out of the five SSPs. As SSP2 (Middle of the Road) storyline lacks a certain level of diversity in relation to the other SSPs and represents a business as usual scenario, we decided to exclude SSP2 from our scenario set.</p>
+          <p><sup>1</sup> To constrain the number of scenarios for consideration and decrease the complexity of the process, it was decided to use only four out of the five SSPs. As SSP2 (Middle of the Road) storyline lacks a certain level of diversity in relation to the other SSPs and represents a business as usual scenario, we decided to exclude SSP2 from our scenario set.</p>
         </aside>
       </section>
       <TableSSPDriver />
@@ -42,22 +42,22 @@
           <p>Additionally, for each extended SSP, we used the SSP quantifications database (Riahi et al., 2017) to add quantitative projections on economic development (GDP) and population growth (Crespo Cuaresma, 2017; Kc & Lutz, 2017).</p>
         </IntersectionObserver>
         <IntersectionObserver :step="1" :noStyling="true" :classes="this.ssp === 'SSP1' ? 'isActive' : ''">
-          <h3>SSP 1: Sustainability</h3>
+          <h3 class="ssp1">SSP 1: Sustainability</h3>
           <p>GDP increases gradually in the sustainability scenario due to transition to a green economy and prioritizing sustainable development over economic growth.</p>
           <p>population remains steady in mid-term future and decreases slowly in longer run under the sustainability and fossil-fueled development scenarios. Decreased population together with increasing GDP growth results in improved livelihood in these two scenarios.</p>
         </IntersectionObserver>
         <IntersectionObserver :step="3" :noStyling="true" :classes="this.ssp === 'SSP3' ? 'isActive' : ''">
-          <h3>SSP 3: Regional rivalry</h3>
+          <h3 class="ssp3">SSP 3: Regional rivalry</h3>
           <p>GDP growth is extremely low in the regional rivalry scenario due to increasing conflicts, securitization of markets and lack of technologies and resources to assist the country for economic advancement.</p>
           <p>Projections show significant population growth in Kenya given the regional rivalry and inequality scenarios. In both these scenarios, increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
         </IntersectionObserver>
         <IntersectionObserver :step="5" :noStyling="true" :classes="this.ssp === 'SSP5' ? 'isActive' : ''">
-          <h3>SSP 5: Fossil-fueled development</h3>
+          <h3 class="ssp5">SSP 5: Fossil-fueled development</h3>
           <p>Projections show highest GDP growth in the fossil-fueled development scenario due to increasing regional collaboration and partnership coupled with technological advancements which assist Kenya growing economically.</p>
           <p>Population remains steady in mid-term future and decreases slowly in longer run under the sustainability and fossil-fueled development scenarios. Decreased population together with increasing GDP growth results in improved livelihood in these two scenarios.</p>
         </IntersectionObserver>
         <IntersectionObserver :step="4" :noStyling="true" :classes="this.ssp === 'SSP4' ? 'isActive' : ''">
-          <h3>SSP 4: Inequality</h3>
+          <h3 class="ssp4">SSP 4: Inequality</h3>
           <p>The inequality scenario projects a significantly slow GDP growth, indicating overall dysfunctional economic performance and ever-growing inequalities.</p>
           <p>Projections show significant population growth in Kenya given the regional rivalry and inequality scenarios. In both these scenarios, increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
         </IntersectionObserver>
@@ -82,6 +82,7 @@
         <ChartChange type="Wheat" />
         <ButtonChange />
       </section>
+      <BoxChange />
       <section class="step">
         <header>
           <span class="caption">Part 4</span>
@@ -148,13 +149,15 @@
         <table class="style">
           <thead>
             <tr>
+              <th>&nbsp;</th>
               <th>Adaptation area</th>
               <th>Description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Transnational collaboration and governance</td>
+              <td><i class="e">🤝</i></td>
+              <td class="first">Transnational collaboration and governance</td>
               <td><ul>
                 <li>A big number of adaptation options identified were transnational (regional, international) adaptation activities suggesting that despite the historical trends, stakeholders believe that in order to be effective, adaptation is a collaborative progress being made through transnational governance and transboundary progress.</li>
                 <li>Transnational and inter-governmental co-management of shared natural resources (i.e. transboundary water and shared ecosystems) were considered effective adaptation option to prepare the country to resolve future regional conflicts and transboundary water disputes.</li>
@@ -162,7 +165,8 @@
               </ul></td>
             </tr>
             <tr>
-              <td>Increased research on cross-border climate impacts and transboundary adaptation</td>
+              <td><i class="e">🗺️</i></td>
+              <td class="first">Increased research on cross-border climate impacts and transboundary adaptation</td>
               <td><ul>
                 <li>When co-producing adaptation options, stakeholders emphasized that investing in research on cross-border climate impacts is necessary to prepare adaptation planning in Kenya to address future impacts transmitting across borders.</li>
                 <li>Several adaptation options encompassed urgent needs for investing in research and development and financing climate-smart technologies especially in regions more vulnerable to cross-border climate impacts. This option would help Kenya to adapt to reducing climate finance and ODA coming from outside of the country.</li>
@@ -170,7 +174,8 @@
               </ul></td>
             </tr>
             <tr>
-              <td>Public-private partnership for resilience building</td>
+              <td><i class="e">🏢</i></td>
+              <td class="first">Public-private partnership for resilience building</td>
               <td><ul>
                 <li>Options relevant to public-private partnership were a mix of policy- and industry-based adaptation activities, suggesting that while private sectors need to get involved in adaptive capacity building for their own future benefits, policy makers are also required to make incentives for private sector participation by setting up policies supporting private sectors.</li>
                 <li>Stakeholders recognized the importance of public-private partnership at both national and transnational levels for adaptation governance by touching upon the importance of private investments for financing adaptation research and development. Co-managing business activities in shared ecosystems was another role for private sector that would address the impact of decreasing economic activities in sectors such as tourism.</li>
@@ -199,6 +204,7 @@
   import Chart from '~/components/Chart'
   import ChartChange from '~/components/Chart-Change'
   import ChartTimes from '~/components/Chart-Times'
+  import BoxChange from '~/components/Box-Change'
   import ExtendedSSPs from '~/components/ExtendedSSPs'
   import TableSSPDriver from '~/components/TableSSPDriver'
   import IntersectionObserver from 'library/src/components/IntersectionObserver'
@@ -222,7 +228,8 @@
       ExtendedSSPs,
       ButtonChange,
       TableSSPDriver,
-      ChartTimes
+      ChartTimes,
+      BoxChange
     },
     computed: {
       ...mapState('time', [
@@ -293,6 +300,30 @@
 
           &.isActive {
             opacity: 1;
+
+            h3 {
+              text-underline-offset: -5px;
+              text-decoration: underline;
+              text-decoration-thickness: 10px;
+              text-decoration-style: solid;
+              text-decoration-skip-ink: none;
+
+              &.ssp1 {
+                text-decoration-color: getColor(green, 100);
+              }
+
+              &.ssp3 {
+                text-decoration-color: getColor(red, 100);
+              }
+
+              &.ssp4 {
+                text-decoration-color: getColor(yellow, 100);
+              }
+
+              &.ssp5 {
+                text-decoration-color: getColor(violet, 100);
+              }
+            }
           }
         }
       }
@@ -435,9 +466,15 @@
     }
     thead {
       padding-bottom: 5px;
+
       th {
+        @include text-table-1();
         border-bottom: 1px solid $color-light-gray;
         padding-bottom: 0.5rem;
+
+        &:first-child {
+          @include text-table-2();
+        }
       }
     }
 
@@ -453,9 +490,18 @@
           padding-top: 0.5rem;
           padding-bottom: 0.5rem;
           border-bottom: 1px solid $color-pale-gray;
+          @include text-table-2();
 
-          &:first-child {
+          &:first-child, &.first {
+            @include text-table-1();
             font-weight: bold;
+            max-width: 20vw;
+          }
+
+          ul {
+            li {
+              margin-bottom: 0.5rem;
+            }
           }
         }
 

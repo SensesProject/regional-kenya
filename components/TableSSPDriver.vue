@@ -13,10 +13,10 @@
       <tbody>
         <tr>
           <Cell>Shared natural resources</Cell>
-          <Cell ssp="1" v-tooltip="{ content: 'This forms the extended SSP 1', trigger: 'manual', show: essp == 1, offset: 5, classes: 'blue' }">Collaborative management of shared natural resources</Cell>
-          <Cell ssp="3" v-tooltip="{ content: 'This forms the extended SSP 3', trigger: 'manual', show: essp == 3, offset: 5, classes: 'blue' }">Isolated planning for the use of shared natural resources</Cell>
-          <Cell ssp="4" v-tooltip="{ content: 'This forms the extended SSP 4', trigger: 'manual', show: essp == 4, offset: 5, classes: 'blue' }">Some countries use the shared natural resources more than other shareholders (high disparities)</Cell>
-          <Cell ssp="5" v-tooltip="{ content: 'This forms the extended SSP 5', trigger: 'manual', show: essp == 5, offset: 5, classes: 'blue' }">Increased use and harvest of natural resources</Cell>
+          <Cell ssp="1" v-tooltip="{ content: 'This forms the extended SSP 1', trigger: 'manual', show: essp == 1, offset: 5, classes: 'green' }">Collaborative management of shared natural resources</Cell>
+          <Cell ssp="3" v-tooltip="{ content: 'This forms the extended SSP 3', trigger: 'manual', show: essp == 3, offset: 5, classes: 'red' }">Isolated planning for the use of shared natural resources</Cell>
+          <Cell ssp="4" v-tooltip="{ content: 'This forms the extended SSP 4', trigger: 'manual', show: essp == 4, offset: 5, classes: 'yellow' }">Some countries use the shared natural resources more than other shareholders (high disparities)</Cell>
+          <Cell ssp="5" v-tooltip="{ content: 'This forms the extended SSP 5', trigger: 'manual', show: essp == 5, offset: 5, classes: 'violet' }">Increased use and harvest of natural resources</Cell>
         </tr>
         <tr>
           <Cell>Technology transfer</Cell>
@@ -66,7 +66,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
 import Cell from '~/components/TableSSPDriver-Cell'
 
 export default {
