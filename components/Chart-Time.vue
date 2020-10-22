@@ -185,25 +185,20 @@ export default {
   }
 
   line.tick {
-    stroke: getColor(gray, 90);
-    stroke-width: 1px;
+    @include graphic-line-tick();
   }
 
   text.tick {
-    font-size: 0.6rem;
-    fill: $color-light-gray;
+    @include graphic-text-tick();
   }
 
   text.label {
-    fill: $color-dark-gray;
-
-    tspan:first-child {
-      fill: #222;
-    }
+    @include graphic-text-label();
   }
 
   path {
     stroke: getColor(gray, 50);
+    fill: none;
 
     &.isActive {
       stroke-width: 2px;
@@ -232,9 +227,7 @@ export default {
   }
 
   footer {
-    font-size: 0.8rem;
-    color: #5e5e64;
-    font-style: italic;
+    @include text-note();
   }
 
 </style>

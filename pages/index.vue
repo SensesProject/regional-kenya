@@ -178,9 +178,6 @@
       ])
     },
     methods: {
-      ...mapActions('step', [
-        'setStep'
-      ]),
       ...mapActions('time', [
         'setSSP'
       ])
@@ -188,7 +185,6 @@
     mounted () {
       this.$on('step', (step) => {
         this.setSSP(`SSP${step}`)
-        // this.setStep(step)
       })
     }
   }
@@ -391,107 +387,6 @@
 
       .questions {
         list-style: none;
-      }
-    }
-  }
-
-  table.style {
-    td, th {
-      vertical-align: top;
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-    thead {
-      padding-bottom: 5px;
-
-      th {
-        @include text-table-1();
-        border-bottom: 1px solid $color-light-gray;
-        padding-bottom: 0.5rem;
-
-        &:first-child {
-          @include text-table-2();
-        }
-      }
-    }
-
-    tbody {
-      tr:first-child {
-        td {
-          padding-top: 0.5rem;
-        }
-      }
-
-      tr {
-        td {
-          padding-top: 0.5rem;
-          padding-bottom: 0.5rem;
-          border-bottom: 1px solid $color-pale-gray;
-          @include text-table-2();
-
-          &:first-child, &.first {
-            @include text-table-1();
-            font-weight: bold;
-            max-width: 20vw;
-          }
-
-          ul {
-            li {
-              margin-bottom: 0.5rem;
-            }
-          }
-        }
-
-        &:first-child td {
-          // background-color: red;
-          border-radius: 5px 5px 0 0;
-        }
-
-        &:last-child td {
-          // background-color: red;
-          border-radius: 0 0 5px 5px;
-        }
-      }
-
-      tr:last-child {
-        td {
-          border: 0;
-        }
-      }
-    }
-  }
-
-  td[colspan="4"] {
-    text-align: center;
-  }
-
-  td[rowspan="2"] {
-    text-align: center;
-
-    // &:first-child {
-    //   padding-right: 2rem;
-    // }
-
-    // &:last-child {
-    //   padding-left: 2rem;
-    // }
-
-    span {
-      writing-mode: vertical-lr;
-      transform: rotate(-180deg);
-    }
-  }
-
-  td.stack {
-    padding: 2rem;
-    div {
-      display: grid;
-      grid-auto-flow: row;
-    }
-
-    &.reverse {
-      div {
-        flex-direction: column-reverse;
       }
     }
   }

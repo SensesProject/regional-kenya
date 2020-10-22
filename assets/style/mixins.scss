@@ -46,6 +46,24 @@
   font-size: 1rem;
 }
 
+@mixin graphic-text-tick () {
+  font-size: 0.6rem;
+  fill: $color-light-gray;
+}
+
+@mixin graphic-text-label () {
+  fill: $color-dark-gray;
+
+  tspan:first-child {
+    fill: #222;
+  }
+}
+
+@mixin graphic-line-tick () {
+  stroke: getColor(gray, 90);
+  stroke-width: 1px;
+}
+
 @mixin box () {
   background-color: #ffffff;
   border: 1px solid #e4e4e4;
