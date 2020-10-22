@@ -150,15 +150,7 @@
 
 <script>
   import { mapState, mapActions } from 'vuex'
-  import Question from '~/components/Question'
-  import ChartDrivers from '~/components/Chart-Drivers'
-  import ChartNetwork from '~/components/Chart-Network'
   import ChartVision from '~/components/Chart-Vision'
-  import ChartWildcards from '~/components/Chart-Wildcards'
-  import ChartPathway from '~/components/Chart-Pathway'
-  import Answer from '~/components/Answer'
-  import Introduction from '~/components/Introduction'
-  import Chart from '~/components/Chart'
   import ChartChange from '~/components/Chart-Change'
   import ChartTimes from '~/components/Chart-Times'
   import BoxChange from '~/components/Box-Change'
@@ -170,16 +162,8 @@
 
   export default {
     components: {
-      Answer,
-      Question,
-      Introduction,
-      Chart,
       IntersectionObserver,
-      ChartDrivers,
-      ChartNetwork,
-      ChartPathway,
       ChartVision,
-      ChartWildcards,
       ChartChange,
       SensesMeta,
       ExtendedSSPs,

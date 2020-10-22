@@ -20,6 +20,7 @@
       <defs v-if="label">
         <path
           :id="'textPath' + n"
+          class="base"
           :d="path" />
       </defs>
       <text class="areaLabels" v-if="label">
@@ -33,7 +34,7 @@
 
 <script>
   import { mapState } from 'vuex'
-  import _ from 'lodash'
+  import { map } from 'lodash'
 
   export default {
     props: {
@@ -68,8 +69,8 @@
       }
     },
     computed: {
-      areas: function () {
-        return _.map(this.data, area => {
+      areas () {
+        return map(this.data, area => {
           const { radius } = this
           const radi = radius * area.r - 30
           const start = { x: -radi, y: 0 }
@@ -89,27 +90,29 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import "~@/assets/style/global";
+
+  $stroke: 5px;
 
   .areas {
     stroke-opacity: 1;
     fill: #fafafa;
-    stroke-width: 5px;
-    stroke: #fff;
+    stroke-width: $stroke;
+    stroke: $color-white;
   }
 
   .area-5 {
-    fill: #fff;
+    fill: $color-white;
   }
 
-  path {
+  path.base {
     fill: none;
   }
 
   line {
-    stroke: #fff;
-    stroke-width: 5px;
+    stroke: $color-white;
+    stroke-width: $stroke;
   }
 
   .areaLabels {
@@ -120,15 +123,5 @@
     text-transform: uppercase;
     letter-spacing: 4px;
   }
-
-  // .background {
-  //   &:hover {
-  //     .areaLabels {
-  //       opacity: 0.7;
-  //     }
-
-
-  //   }
-  // }
 
 </style>

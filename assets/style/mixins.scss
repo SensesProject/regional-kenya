@@ -41,6 +41,11 @@
   fill: getColor(gray, 60);
 }
 
+@mixin headline-graphic () {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 @mixin box () {
   background-color: #ffffff;
   border: 1px solid #e4e4e4;

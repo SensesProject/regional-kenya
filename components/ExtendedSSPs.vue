@@ -96,21 +96,21 @@ export default {
     .highcol { grid-area: highcol; }
 
     .col {
+      @include headline-graphic();
       writing-mode: vertical-lr;
       transform: rotate(-180deg);
       text-align: center;
-      font-weight: bold;
     }
 
     .rcp {
+      @include headline-graphic();
       text-align: center;
-      font-weight: bold;
     }
 
     .ssp {
       display: flex;
       flex-direction: column;
-      transition: opacity 0.3s;
+      transition: opacity $transition;
 
       &.hasActive:not(.isActive) {
         opacity: 0.7;

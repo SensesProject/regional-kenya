@@ -46,14 +46,10 @@ import { extent } from 'd3-array'
 import { timer } from 'd3-timer'
 import { format } from 'd3-format'
 import { interpolateNumber } from 'd3-interpolate'
-import ChartDriver from '~/components/Chart-Driver2'
 
 const f = format('.1f')
 
 export default {
-  components: {
-    ChartDriver
-  },
   props: ['type'],
   data () {
     return {

@@ -153,42 +153,12 @@ export default {
 <style lang="scss" scoped>
   @import "~@/assets/style/global";
 
-  .values {
-    font-size: 0.8rem;
-  }
-
   .vis-container, svg {
     width: 100%;
   }
 
-  path {
-    stroke: #000;
-    fill: none;
-    transition: d 0.3s;
-  }
-
-  circle {
-    opacity: 0.2;
-    fill: $color-yellow;
-  }
-
-  circle {
-    &.vision {
-      opacity: 1;
-      fill: black;
-    }
-  }
-
-  .sector {
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    font-size: 0.8rem;
-    fill: #333333;
-  }
-
   .rcp, .col {
-    font-weight: bold;
-    font-size: 1rem;
+    @include headline-graphic();
   }
 
 </style>
