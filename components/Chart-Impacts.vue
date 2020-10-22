@@ -1,5 +1,5 @@
 <template>
-  <div ref="vis" class="vis-container graphic graphic--vision">
+  <div ref="vis" class="vis-container graphic layout--right-wide">
     <svg
       class="vis"
       :width="width + 'px'"

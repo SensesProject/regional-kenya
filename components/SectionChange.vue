@@ -11,7 +11,7 @@
         <p>Running crop models under low-end and medium/high end climate change (RCPs 2.6 [hyperlink to the primer, climate change page] linked to ESSP 1 and 4 and RCP6.0 [hyperlink to the primer, climate change page] linked to ESSP 3 and 5), we developed alternative projections of crop production in the countries exporting essential crops to Kenya  for two time-slices, 2035-2064 and 2070-2099.</p>
       </div>
     </section>
-    <section class="graphic graphic--changes">
+    <section class="graphic layout--wide graphic--changes">
       <ChartChange type="Corn" />
       <ChartChange type="Rice" />
       <ChartChange type="Wheat" />
@@ -37,5 +37,10 @@ export default {
 
 <style lang="scss" scoped>
   @import "~@/assets/style/global";
+
+  .graphic--changes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="graphic graphic--times" ref="graphicTimes" :style="styling">
+  <section class="graphic layout--right-wide graphic--times" ref="graphicTimes" :style="styling">
     <ChartTime type="gdp">
       <template v-slot:header>
         <h3>Change in GDP</h3>
@@ -68,6 +68,10 @@ export default {
   .graphic--times {
     position: sticky;
     top: 0;
+    display: grid;
+    height: 70vh;
+    grid-row-gap: $gap-v-inner;
+    align-items: start;
   }
 
 </style>

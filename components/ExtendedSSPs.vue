@@ -1,5 +1,5 @@
 <template>
-  <figure class="graphic graphic--wide">
+  <figure class="graphic layout--wide">
     <span class="rcp rcp60">Medium/high-end climate change (RCP 6.0)</span>
     <span class="rcp rcp26">Low-end climate change (RCP2.6)</span>
     <span class="col lowcol">Low-level regional collaboration</span>
@@ -123,6 +123,10 @@ export default {
       &.ssp5, &.ssp1 {
         text-align: right;
       }
+    }
+
+    img {
+      width: 100%;
     }
   }
 

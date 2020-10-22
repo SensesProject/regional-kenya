@@ -1,5 +1,5 @@
 <template>
-  <div ref="vis" class="graphic graphic--change">
+  <div ref="vis" class="graphic">
     <h3>{{ type }}</h3>
     <h5>Change of crop production (unit ton) in exporting countries</h5>
     <svg

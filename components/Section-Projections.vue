@@ -60,4 +60,44 @@ export default {
 <style lang="scss" scoped>
   @import "~@/assets/style/global";
 
+  .step {
+    &.step--ssp {
+      display: grid;
+      grid-row-gap: 4rem;
+
+      & > * {
+        opacity: 0.3;
+        transition: opacity 0.3s;
+
+        &.isActive {
+          opacity: 1;
+
+          h3 {
+            text-underline-offset: -5px;
+            text-decoration: underline;
+            text-decoration-thickness: 10px;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: none;
+
+            &.ssp1 {
+              text-decoration-color: getColor(green, 100);
+            }
+
+            &.ssp3 {
+              text-decoration-color: getColor(red, 100);
+            }
+
+            &.ssp4 {
+              text-decoration-color: getColor(yellow, 100);
+            }
+
+            &.ssp5 {
+              text-decoration-color: getColor(violet, 100);
+            }
+          }
+        }
+      }
+    }
+  }
+
 </style>

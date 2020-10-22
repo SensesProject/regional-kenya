@@ -8,7 +8,7 @@
       <p>In the next step, participants were invited to co-produce adaptation options to address future cross-border climate impacts through a participatory brainstorming [hyperlink to the co-production techniques DB] session. The process of generating adaptation options was focused on the present time and near future. </p>
       <p>After synthesizing the generated adaptation options, we identified the main themes of adaptation options and activities that were echoed along the four risk pathways and across several extended SSPs. We clustered these adaptation options into three key areas of adaptation and recommended those to policy makers to national and local adaptation planners and policy makers for improving Kenya’s adaptation planning at present and near future in order to increase capacity to mitigate/adapt to cross-border climate impacts in 2040-2060-time horizon. </p>
     </section>
-    <section class="graphic graphic--wide">
+    <section class="graphic layout--wide">
       <table class="style">
         <thead>
           <tr>

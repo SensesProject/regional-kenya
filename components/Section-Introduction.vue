@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <section id="introduction" class="step introduction">
+    <section id="introduction" class="step step--wider">
       <header>
         <h1>Kenya case study page</h1>
         <h3>Assessing future cross-border climate risks and adaptation options for Kenya.</h3>
@@ -16,5 +16,9 @@ export default {}
 
 <style lang="scss" scoped>
   @import "~@/assets/style/global";
+
+  #introduction {
+    margin: 5vh 0;
+  }
 
 </style>

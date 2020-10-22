@@ -1,5 +1,5 @@
 <template>
-  <section class="graphic graphic--wide">
+  <section class="graphic layout--wide">
     <table class="style">
       <thead>
         <tr>
