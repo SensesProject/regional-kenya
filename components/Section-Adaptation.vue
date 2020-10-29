@@ -57,4 +57,8 @@ export default {}
 <style lang="scss" scoped>
   @import "~@/assets/style/global";
 
+  table td:last-child {
+    max-width: 70ch;
+  }
+
 </style>

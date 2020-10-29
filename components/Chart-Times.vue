@@ -1,5 +1,5 @@
 <template>
-  <section class="graphic layout--right-wide graphic--times" ref="graphicTimes" :style="styling">
+  <section class="graphic layout--right graphic--times" ref="graphicTimes" :style="styling">
     <ChartTime type="gdp">
       <template v-slot:header>
         <h3>Change in GDP</h3>
@@ -72,6 +72,24 @@ export default {
     height: 70vh;
     grid-row-gap: $gap-v-inner;
     align-items: start;
+
+    grid-column-start: 1;
+    grid-column-end: 6;
+
+    @include query($narrow) {
+      grid-column-start: 1;
+      grid-column-end: 5;
+    }
+
+    @include query($medium) {
+      grid-column-start: 4;
+      grid-column-end: 6;
+    }
+
+    @include query($wide) {
+      grid-column-start: 3;
+      grid-column-end: 5;
+    }
   }
 
 </style>

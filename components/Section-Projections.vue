@@ -65,6 +65,23 @@ export default {
       display: grid;
       grid-row-gap: 4rem;
 
+      grid-column-start: 1;
+      grid-column-end: 6;
+
+      @include query($narrow) {
+        grid-column-end: 5;
+      }
+
+      @include query($medium) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+
+      @include query($wide) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
       & > * {
         opacity: 0.3;
         transition: opacity 0.3s;

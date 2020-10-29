@@ -16,7 +16,21 @@
 
   .layout--narrow, .step, .step header {
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 6;
+
+    @include query($narrow) {
+      grid-column-end: 5;
+    }
+
+    @include query($medium) {
+      grid-column-start: 2;
+      grid-column-end: 5;
+    }
+
+    @include query($wide) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
   }
 
   .step {
@@ -35,28 +49,84 @@
       grid-column-gap: 4rem;
 
       .content {
-        column-count: 2;
+        column-count: 1;
         column-gap: 4rem;
         grid-column-start: 1;
-        grid-column-end: 5;
+        grid-column-end: 6;
+
+        @include query($medium) {
+          column-count: 2;
+          grid-column-end: 5;
+        }
       }
 
       .footnotes {
-        grid-row-start: 2;
-        grid-column-start: 5;
+        grid-column-start: 1;
+        grid-column-end: 6;
+
+        @include query($medium) {
+          grid-row-start: 2;
+          grid-column-start: 5;
+          grid-column-end: 6;
+        }
+      }
+
+      header {
+        @include query($medium) {
+          grid-column-start: 1;
+          grid-column-end: 4;
+        }
+
+        @include query($wide) {
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+      }
+
+      @include query($narrow) {
+        grid-column-end: 5;
+      }
+
+      @include query($medium) {
+        grid-column-start: 1;
+        grid-column-end: 6;
+      }
+
+      @include query($wide) {
+        grid-column-start: 1;
         grid-column-end: 6;
       }
     }
   }
 
-  .layout--wide, .module-meta {
+  .module-meta {
     grid-column-start: 1;
     grid-column-end: 6;
   }
 
-  .layout--right-wide {
-    grid-column-start: 3;
+  .layout--wide, {
+    grid-column-start: 1;
     grid-column-end: 6;
+
+    @include query($wide) {
+      grid-column-start: 1;
+      grid-column-end: 5;
+    }
+  }
+
+  .layout--right-wide {
+    grid-column-start: 1;
+    grid-column-end: 6;
+
+    @include query($medium) {
+      grid-column-start: 2;
+      grid-column-end: 5;
+    }
+
+    @include query($wide) {
+      grid-column-start: 3;
+      grid-column-end: 6;
+    }
   }
 
   .layout--left {
@@ -65,8 +135,23 @@
   }
 
   .layout--right {
-    grid-column-start: 4;
+    grid-column-start: 1;
     grid-column-end: 6;
+
+    @include query($narrow) {
+      grid-column-start: 1;
+      grid-column-end: 5;
+    }
+
+    @include query($medium) {
+      grid-column-start: 2;
+      grid-column-end: 5;
+    }
+
+    @include query($wide) {
+      grid-column-start: 4;
+      grid-column-end: 6;
+    }
   }
 }
 
