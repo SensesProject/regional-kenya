@@ -6,17 +6,19 @@
         <h2>Quantitative enhanced scenarios</h2>
       </header>
       <div class="content">
-        <p>Since the scenarios were constructed to inform adaptation planning to cross-border climate impacts, we also wanted them to include elements of links to outside Kenya. To this end we opted for illustrating such links with global climate impacts modelling outputs. We reviewed future drivers of importance at local and regional scale identified by stakeholders and selected food imports as a key future driver for running climate impact models.</p>
-        <p>For the analysis here we used data generated within the ISIMIP [hyperlink to ISIMIP] project, more specifically within its second round ISIMIP2b (Frieler et al., 2017). The ISIMIP2b climate scenarios entail both RCP2.6 and RCP6.0 climates from four Earth system models (GFDL-ESM2M (Dunne et al., 2012), HadGEM2-ES (Collins et al., 2011), IPSL-CM5A-LR (Boucher et al., 2020) and MIROC5 (Watanabe et al., 2010) that were run in the context of the CMIP5 project (Taylor et al., 2012).  The crop model data employed here are from the three crop models GEPIC (Folberth et al., 2012; Izaurralde et al., 2006; J. Liu et al., 2007; The EPIC Crop Growth Model, n.d.),,  LPJmL (Bondeau et al., 2007) and PEPIC (W. Liu et al., 2016).</p>
-        <p>Running crop models under low-end and medium/high end climate change (RCPs 2.6 [hyperlink to the primer, climate change page] linked to ESSP 1 and 4 and RCP6.0 [hyperlink to the primer, climate change page] linked to ESSP 3 and 5), we developed alternative projections of crop production in the countries exporting essential crops to Kenya  for two time-slices, 2035-2064 and 2070-2099.</p>
+        <p>To further enhance the narratives and better inform adaptation planning to cross-border climate impacts, we also used the results from global climate impacts modelling to illustrate future risks to food security via import.  Food security and climate impacts on food imports was identified as a key future driver by local stakeholders. Although making quantitative scenarios did not involve any co-productions process, we believed that adding quantitative modeling results enhances the socioeconomic scenarios and improves stakeholder engagement throughout the co-production process.</p>
+        <p>Kenya significantly depends on import of essential crops, including wheat, corn, and rice. In 2017, imports accounted for 29% of total wheat consumption, 27% of corn and 19% of rice. Of the total imported wheat, 30% came from Russia, 19% from Argentina, 12% from Ukraine, and 9% from Canada. 45% of the imported corn came from Mexico, 19% from South Africa, and 11% from Uganda. And of the total rise imported to the country, 67% came from Pakistan and 25% from Thailand (Harvard University, 2019).</p>
+        <p>For the analysis here we used data generated within the ISIMIP project, more specifically within its second round ISIMIP2b (Frieler et al., 2017) and projected annual crop production in the key exporting countries to Kenya for wheat, rice and corn. The ISIMIP2b climate scenarios entail both RCP2.6 and RCP6.0 climates from four Earth system <a href="https://climatescenarios.org/primer/climate-impacts" target="_blank">models</a> (GFDL-ESM2M (Dunne et al., 2012), HadGEM2-ES (Collins et al., 2011), IPSL-CM5A-LR (Boucher et al., 2020) and MIROC5 (Watanabe et al., 2010) that were run in the context of the CMIP5 project (Taylor et al., 2012).</p>
+        <p>Running crop models under low-end and medium/high end climate change (<a href="https://climatescenarios.org/primer/climate-change" target="_blank">RCPs 2.6</a> linked to ESSP 1 and 4 and <a href="https://climatescenarios.org/primer/climate-change" target="_blank">RCP6.0</a> linked to ESSP 3 and 5), we developed alternative projections of crop production in the countries exporting essential crops to Kenya for two time-slices, 2035-2064 and 2070-2099.</p>
       </div>
     </section>
-    <section class="graphic layout--wide graphic--changes">
+    <figure class="graphic layout--wide graphic--changes">
       <ChartChange type="Corn" />
       <ChartChange type="Rice" />
       <ChartChange type="Wheat" />
+      <figcaption class="cap figcaption">Figure 4. production graphs (RCP2.6 and RCP6.0)</figcaption>
       <ButtonChange />
-    </section>
+    </figure>
     <BoxChange />
   </div>
 </template>

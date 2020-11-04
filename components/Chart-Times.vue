@@ -5,9 +5,6 @@
         <h3>Change in GDP</h3>
         <h5>Projections of GDP per SSP in Kenya</h5>
       </template>
-      <template v-slot:footer>
-        <span>Figure 4. Projections of GDP, based on the SSP database hosted by the IIASA Energy Program at https://tntcat.iiasa.ac.at/SspDb</span>
-      </template>
     </ChartTime>
     <ChartTime type="population">
       <template v-slot:header>
@@ -15,7 +12,7 @@
         <h5>Projections of population per SSP in Kenya</h5>
       </template>
       <template v-slot:footer>
-        <span>Figure 5. Projections of population growth, based on the SSP database hosted by the IIASA Energy Program at https://tntcat.iiasa.ac.at/SspDb</span>
+        <span>Figure 3. Projections of GDP and population, based on the SSP database hosted by the IIASA Energy Program at https://tntcat.iiasa.ac.at/SspDb</span>
       </template>
     </ChartTime>
   </section>

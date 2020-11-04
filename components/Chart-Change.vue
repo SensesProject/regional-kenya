@@ -1,7 +1,7 @@
 <template>
   <div ref="vis" class="graphic">
     <h3>{{ type }}</h3>
-    <h5>Change of crop production (unit ton) in exporting countries</h5>
+    <h5>Change of {{ type.toLowerCase() }} production (unit million ton) in key exporting countries to Kenya</h5>
     <svg
       class="vis"
       :width="width + 'px'"
@@ -71,11 +71,9 @@ export default {
           })
         })
       })
-      console.log(values)
       return extent(values)
     },
     scaleY () {
-      console.log(this.extentY)
       return scaleLinear()
         .range([this.height - this.margin.bottom, this.margin.top])
         .domain(this.extentY).nice()

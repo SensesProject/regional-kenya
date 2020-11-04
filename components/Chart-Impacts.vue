@@ -1,5 +1,5 @@
 <template>
-  <div ref="vis" class="vis-container graphic layout--right-wide">
+  <figure ref="vis" class="vis-container graphic layout--right-wide">
     <svg
       class="vis"
       :width="width + 'px'"
@@ -22,7 +22,8 @@
         <Point :x="x" :y="y" :label="label" :key="key" v-for="{ x, y, key, label, color, angle } in points" :color="color" :data-test="angle" />
       </g>
     </svg>
-  </div>
+    <figcaption class="cap figcaption">Figure 5. Future cross-border climate impacts for Kenya across four transmission pathways and four scenarios</figcaption>
+  </figure>
 </template>
 
 <script>

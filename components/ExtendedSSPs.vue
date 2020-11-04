@@ -21,7 +21,7 @@
       <img :src="`img/${ssp}.jpg`" />
     </figure>
     <figcaption class="cap figcaption">
-      Figure 3. Extended SSPs across climate change and regional collaboration axes. The visualizations were developed by Leti Arts (www.letiarts.com)
+      Figure 2. Extended SSPs across climate change and regional collaboration axes. The visualizations were developed by <a href="http://www.letiarts.com/">Leti Arts</a>.
     </figcaption>
   </figure>
 </template>
@@ -38,19 +38,19 @@ export default {
       return [{
         caption: 'Extended SSP3: Regional rivalry',
         ssp: 3,
-        tooltip: 'Regional rivalry is a scenario where Kenya cooperates with neighbouring countries around the common interests and aim to compete against other regional blocs. However, growing nationalist values and intense competition over the scarce resources intensify the rivalry and securitize the relationships between the EAC countries. Access to the technological innovations becomes extremely difficult for Kenya because knowledge sharing practices are securitized, and innovations are strictly patented and expensive.'
+        tooltip: '<em>Regional</em> rivalry is a scenario where Kenya cooperates with neighbouring countries around the common interests and aim to compete against other regional blocs. However, growing nationalist values and intense competition over the scarce resources intensify the rivalry and securitize the relationships between the EAC countries. Access to the technological innovations becomes extremely difficult for Kenya because knowledge sharing practices are securitized, and innovations are strictly patented and expensive.'
       }, {
         caption: 'Extended SSP5: Fossil fueled development',
         ssp: 5,
-        tooltip: 'Fossil-fuelled development is a scenario where regional collaboration in EAC increases with a focus on economic growth and increasing competitiveness in global market. Kenya and neighbours agree on the maximum use of the shared natural resources, but environmental policies including, climate adaptation are not priorities. As a result, climate-induced border conflicts decrease.'
+        tooltip: '<em>Fossil-fuelled development</em> is a scenario where regional collaboration in EAC increases with a focus on economic growth and increasing competitiveness in global market. Kenya and neighbours agree on the maximum use of the shared natural resources, but environmental policies including, climate adaptation are not priorities. As a result, climate-induced border conflicts decrease.'
       }, {
         caption: 'Extended SSP4: Inequality',
         ssp: 4,
-        tooltip: 'Inequality is a scenario where regional collaboration in the EAC is fragmented and unstable. While Kenya attempts to maintain collaboration, traditional values upsurge in the region leading the neighbouring countries to enhance militarization and securitized societies. Kenya – like most low-income countries – is struggling to provide the minimum life capacity for the poor majority of the population.'
+        tooltip: '<em>Inequality</em> is a scenario where regional collaboration in the EAC is fragmented and unstable. While Kenya attempts to maintain collaboration, traditional values upsurge in the region leading the neighbouring countries to enhance militarization and securitized societies. Kenya – like most low-income countries – is struggling to provide the minimum life capacity for the poor majority of the population. '
       }, {
         caption: 'Extended SSP1: Sustainability',
         ssp: 1,
-        tooltip: 'Sustainability is a scenario where regional collaborations towards sustainable development improves within the east African community. Collaborations on natural resource management between Kenya and neighbouring countries ensure preservation and sustainable use of resources and make progress toward resolving cross border conflicts over access to and use of shared resources, especially transboundary water. Clean energy is accessible for a larger share of Kenyan population.'
+        tooltip: '<em>Sustainability</em> is a scenario where regional collaborations towards sustainable development improves within the east African community. Collaborations on natural resource management between Kenya and neighbouring countries ensure preservation and sustainable use of resources and make progress toward resolving cross border conflicts over access to and use of shared resources, especially transboundary water. Clean energy is accessible for a larger share of Kenyan population.'
       }]
     }
   },

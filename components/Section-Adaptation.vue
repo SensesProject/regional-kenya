@@ -1,14 +1,16 @@
 <template>
   <div class="container">
-    <section class="step">
+    <section class="step step--columns">
       <header>
         <span class="caption">Part 5</span>
         <h2>Adaptation options</h2>
       </header>
-      <p>In the next step, participants were invited to co-produce adaptation options to address future cross-border climate impacts through a participatory brainstorming [hyperlink to the co-production techniques DB] session. The process of generating adaptation options was focused on the present time and near future. </p>
-      <p>After synthesizing the generated adaptation options, we identified the main themes of adaptation options and activities that were echoed along the four risk pathways and across several extended SSPs. We clustered these adaptation options into three key areas of adaptation and recommended those to policy makers to national and local adaptation planners and policy makers for improving Kenya’s adaptation planning at present and near future in order to increase capacity to mitigate/adapt to cross-border climate impacts in 2040-2060-time horizon. </p>
+      <div class="content">
+        <p>In the next step, participants were invited to co-produce adaptation options to address future cross-border climate impacts through a participatory <a href="https://climatescenarios.org/finder/?name=BRAINSTORMING" target="_blank">brainstorming</a> session. The process of generating adaptation options was focused on the present time and near future. Adaptation options were defined as individual adaptation activities and action items that together could form adaptation pathways. However, developing pathways would require an additional step where a timeline is introduced to the process and adaptation options are given a time label. In this case study, we stopped the co-production process at the stage of identifying adaptation options and did not develop adaptation pathways. An example of using co-production techniques to build adaptation pathways is shown in the <a href="https://climatescenarios.org/dutch" target="_blank">Dutch case study</a>.</p>
+        <p>After synthesizing the generated adaptation options, we identified the main themes of adaptation activities that were echoed along the four risk pathways and across the extended SSPs. We clustered these adaptation options into three key areas of adaptation and recommended those to policy makers for improving Kenya’s adaptation planning at present and near future in order to increase capacity to adapt to cross-border climate impacts in 2040-2060-time horizon.</p>
+      </div>
     </section>
-    <section class="graphic layout--wide">
+    <figure class="graphic layout--wide">
       <table class="style">
         <thead>
           <tr>
@@ -21,32 +23,22 @@
           <tr>
             <td><i class="e">🤝</i></td>
             <td class="first">Transnational collaboration and governance</td>
-            <td><ul>
-              <li>A big number of adaptation options identified were transnational (regional, international) adaptation activities suggesting that despite the historical trends, stakeholders believe that in order to be effective, adaptation is a collaborative progress being made through transnational governance and transboundary progress.</li>
-              <li>Transnational and inter-governmental co-management of shared natural resources (i.e. transboundary water and shared ecosystems) were considered effective adaptation option to prepare the country to resolve future regional conflicts and transboundary water disputes.</li>
-              <li>Transnational policy frameworks and legal programs for adaptation could assist Kenya and neighbouring countries to tackle common cross-border climate change impacts in a collective effort.</li>
-            </ul></td>
+            <td><p>Stakeholders believe that in order to be effective, adaptation must be a collaborative progress being made through transnational governance. <strong>Transnational and inter-governmental co-management of shared natural resources (i.e. transboundary water and shared ecosystems) is considered effective adaptation option to prepare the country for future cross-border climate impacts</strong> and resolve future regional conflicts and transboundary water disputes. This could be facilitated through transnational policy frameworks and legal programs focused on adaptation.</p></td>
           </tr>
           <tr>
             <td><i class="e">🗺️</i></td>
             <td class="first">Increased research on cross-border climate impacts and transboundary adaptation</td>
-            <td><ul>
-              <li>When co-producing adaptation options, stakeholders emphasized that investing in research on cross-border climate impacts is necessary to prepare adaptation planning in Kenya to address future impacts transmitting across borders.</li>
-              <li>Several adaptation options encompassed urgent needs for investing in research and development and financing climate-smart technologies especially in regions more vulnerable to cross-border climate impacts. This option would help Kenya to adapt to reducing climate finance and ODA coming from outside of the country.</li>
-              <li>Although most adaptation options relevant to research were national, advocating for international knowledge sharing and technological collaborations were mentioned at the transnational level.</li>
-            </ul></td>
+            <td><p>Stakeholders emphasized that <strong>investing in research on cross-border climate impacts is necessary to prepare adaptation planning in Kenya to address future impacts transmitting across borders.</strong> Investing in research and development and financing climate-smart technologies especially in regions more vulnerable to cross-border climate impacts would help Kenya to adapt to reducing climate finance and ODA coming from outside of the country.</p></td>
           </tr>
           <tr>
             <td><i class="e">🏢</i></td>
             <td class="first">Public-private partnership for resilience building</td>
-            <td><ul>
-              <li>Options relevant to public-private partnership were a mix of policy- and industry-based adaptation activities, suggesting that while private sectors need to get involved in adaptive capacity building for their own future benefits, policy makers are also required to make incentives for private sector participation by setting up policies supporting private sectors.</li>
-              <li>Stakeholders recognized the importance of public-private partnership at both national and transnational levels for adaptation governance by touching upon the importance of private investments for financing adaptation research and development. Co-managing business activities in shared ecosystems was another role for private sector that would address the impact of decreasing economic activities in sectors such as tourism.</li>
-            </ul></td>
+            <td><p>Stakeholders recognized the importance of public-private partnership at both national and transnational levels for adaptation governance. <strong>Private investment is significantly important for financing adaptation research and development.</strong> While private sectors need to get involved in adaptive capacity building, policy makers are also required to make incentives for private sector participation by setting up policies supporting private sectors.</p></td>
           </tr>
         </tbody>
       </table>
-    </section>
+      <figcaption class="cap figcaption">Table 1. Key areas of adaptation for Kenya</figcaption>
+    </figure>
   </div>
 </template>
 

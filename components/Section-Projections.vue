@@ -6,23 +6,23 @@
       </IntersectionObserver>
       <IntersectionObserver :step="1" :noStyling="true" :classes="this.ssp === 'SSP1' ? 'isActive' : ''">
         <h3 class="ssp1">SSP 1: Sustainability</h3>
-        <p>GDP increases gradually in the sustainability scenario due to transition to a green economy and prioritizing sustainable development over economic growth.</p>
-        <p>population remains steady in mid-term future and decreases slowly in longer run under the sustainability and fossil-fueled development scenarios. Decreased population together with increasing GDP growth results in improved livelihood in these two scenarios.</p>
+        <p>GDP increases gradually in the <em>Sustainability</em> scenario due to transition to a green economy and prioritizing sustainable development over economic growth.</p>
+        <p>Population remains steady in mid-term future and decreases slowly in the long run in the <em>Sustainability</em> scenarios. Decreased population together with increasing GDP growth results in improved livelihood.</p>
       </IntersectionObserver>
       <IntersectionObserver :step="3" :noStyling="true" :classes="this.ssp === 'SSP3' ? 'isActive' : ''">
         <h3 class="ssp3">SSP 3: Regional rivalry</h3>
-        <p>GDP growth is extremely low in the regional rivalry scenario due to increasing conflicts, securitization of markets and lack of technologies and resources to assist the country for economic advancement.</p>
-        <p>Projections show significant population growth in Kenya given the regional rivalry and inequality scenarios. In both these scenarios, increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
+        <p>GDP growth is extremely low in the <em>Regional rivalry</em> scenario due to increasing conflicts, securitization of markets and lack of technologies and resources to assist the country for economic advancement.</p>
+        <p>Population grows significantly in the <em>Regional rivalry</em> scenario. I Increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
       </IntersectionObserver>
       <IntersectionObserver :step="5" :noStyling="true" :classes="this.ssp === 'SSP5' ? 'isActive' : ''">
         <h3 class="ssp5">SSP 5: Fossil-fueled development</h3>
-        <p>Projections show highest GDP growth in the fossil-fueled development scenario due to increasing regional collaboration and partnership coupled with technological advancements which assist Kenya growing economically.</p>
-        <p>Population remains steady in mid-term future and decreases slowly in longer run under the sustainability and fossil-fueled development scenarios. Decreased population together with increasing GDP growth results in improved livelihood in these two scenarios.</p>
+        <p>GDP growth is exceptionally high in the <em>Fossil-fuelled development</em> scenario, due to increasing regional collaboration and partnership coupled with technological advancements which assist Kenya growing economically.</p>
+        <p>Population remains steady in mid-term future and decreases slowly in the long run in the <em>Fossil-fuelled development</em> scenarios. Decreased population together with increasing GDP growth results in improved livelihood.</p>
       </IntersectionObserver>
       <IntersectionObserver :step="4" :noStyling="true" :classes="this.ssp === 'SSP4' ? 'isActive' : ''">
         <h3 class="ssp4">SSP 4: Inequality</h3>
-        <p>The inequality scenario projects a significantly slow GDP growth, indicating overall dysfunctional economic performance and ever-growing inequalities.</p>
-        <p>Projections show significant population growth in Kenya given the regional rivalry and inequality scenarios. In both these scenarios, increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
+        <p>GDP growth is significantly slow in the <em>Inequality</em> scenario, indicating overall dysfunctional economic performance and ever-growing inequalities.</p>
+        <p>Population grows significantly in the <em>Inequality</em> scenario. I Increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
       </IntersectionObserver>
     </section>
     <ChartTimes />
