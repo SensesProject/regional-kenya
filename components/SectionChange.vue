@@ -16,7 +16,7 @@
       <ChartChange type="Corn" />
       <ChartChange type="Rice" />
       <ChartChange type="Wheat" />
-      <figcaption class="cap figcaption">Figure 4. production graphs (RCP2.6 and RCP6.0)</figcaption>
+      <figcaption class="cap figcaption">Figure 4. Change of production (unit million ton) in key exporting countries to Kenya (RCP2.6 and RCP6.0)</figcaption>
       <ButtonChange />
     </figure>
     <BoxChange />

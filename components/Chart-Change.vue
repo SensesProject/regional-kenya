@@ -1,7 +1,6 @@
 <template>
   <div ref="vis" class="graphic">
     <h3>{{ type }}</h3>
-    <h5>Change of {{ type.toLowerCase() }} production (unit million ton) in key exporting countries to Kenya</h5>
     <svg
       class="vis"
       :width="width + 'px'"

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <section id="introduction" class="step step--wider">
+    <section id="introduction" class="step step--intro">
       <header>
         <span class="caption">Kenya Case Study</span>
         <h1>Adaptation in Kenya</h1>
