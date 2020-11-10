@@ -4,7 +4,7 @@
       <table class="style">
         <thead>
           <tr>
-            <th>Key drivers \ SSPs</th>
+            <th>Key drivers</th>
             <th>SSP1: sustainability</th>
             <th>SSP3: regional rivalry</th>
             <th>SSP4: inequality</th>
