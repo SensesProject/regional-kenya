@@ -7,16 +7,20 @@
       :height="height + 'px'"
       :viewBox="`0 0 ${width} ${height}`"
     >
-    <!-- <g>
-      <line v-for="({ x1, x2, y }) in ticks" :x1="x1" :x2="x2" :y1="y" :y2="y" class="tick" />
-    </g> -->
-    <g v-for="({ x1, x2, y1, y2, country, v1, v2 }) in elements">
-      <text :x="x1 - 5" :y="y1" text-anchor="end" dominant-baseline="middle" class="label"><tspan>{{ country }}:</tspan><tspan> {{ v1 }}</tspan></text>
-      <text :x="x2 + 5" :y="y2" text-anchor="start" dominant-baseline="middle" class="label">{{ v2 }}</text>
-      <!-- <circle :cx="x1" :cy="y1" r="2" />
-      <circle :cx="x2" :cy="y2" r="2" /> -->
-      <line :x1="x1" :x2="x2" :y1="y1" :y2="y2" class="change" />
-    </g>
+      <g>
+        <g v-for="({ x1, x2, y, tick }, i) in ticks">
+          <line :x1="x1" :x2="x2" :y1="y" :y2="y" class="tick" />
+          <text v-if="i === 0 || i === ticks.length - 1" :x="x1 - 5" :y="y" text-anchor="end" dominant-baseline="middle" class="tick">{{ tick }}</text>
+        </g>
+      </g>
+      <g v-for="({ x1, x2, y1, y2, country, v1, v2 }) in elements">
+        <text :x="x1 - 5" :y="y1" text-anchor="end" dominant-baseline="middle" class="label label--base"><tspan>{{ country }}:</tspan><tspan> {{ v1 }}</tspan></text>
+        <text :x="x1 - 5" :y="y1" text-anchor="end" dominant-baseline="middle" class="label"><tspan>{{ country }}:</tspan><tspan> {{ v1 }}</tspan></text>
+        <text :x="x2 + 5" :y="y2" text-anchor="start" dominant-baseline="middle" class="label">{{ v2 }}</text>
+        <!-- <circle :cx="x1" :cy="y1" r="2" />
+        <circle :cx="x2" :cy="y2" r="2" /> -->
+        <line :x1="x1" :x2="x2" :y1="y1" :y2="y2" class="change" />
+      </g>
     </svg>
   </div>
 </template>
@@ -41,10 +45,10 @@ export default {
       width: 0,
       height: 0,
       margin: {
-        left: 75,
-        right: 75,
-        top: 60,
-        bottom: 60
+        left: 100,
+        right: 20,
+        top: 0,
+        bottom: 10
       }
     }
   },
@@ -121,12 +125,13 @@ export default {
       })
     },
     ticks () {
-      return map(this.scaleY.ticks(1), tick => {
+      return map(this.scaleY.ticks(4), tick => {
         const [x1, x2] = this.xs
         return {
           x1: x1 - 10,
           x2: x2 + 10,
-          y: this.scaleY(tick)
+          y: this.scaleY(tick),
+          tick
         }
       })
     }
@@ -172,14 +177,21 @@ export default {
 <style lang="scss" scoped>
   @import "~@/assets/style/global";
 
+  h3 {
+    text-align: center;
+  }
+
   .change {
     stroke: $color-neon;
     stroke-width: 2px;
   }
 
-  .tick {
-    stroke: getColor(gray, 50);
-    stroke-width: 1px;
+  line.tick {
+    @include graphic-line-tick();
+  }
+
+  text.tick {
+    @include graphic-text-tick();
   }
 
   .values {
@@ -200,6 +212,12 @@ export default {
 
     tspan:first-child {
       fill: #222;
+    }
+
+    &.label--base {
+      fill: #fff;
+      stroke: #fff;
+      stroke-width: 3px;
     }
     // font-style: italic;
   }
