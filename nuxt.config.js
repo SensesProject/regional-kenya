@@ -22,5 +22,8 @@ export default {
   build: {
     extend (config, ctx) {
     }
+  },
+  generate: {
+    crawler: false
   }
 }
