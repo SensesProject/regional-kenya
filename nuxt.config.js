@@ -1,17 +1,12 @@
+const { getHead } = require('library/src/assets/js/head.js')
 
 export default {
   mode: 'spa',
-  head: {
+  head: getHead({
     title: 'Co-producing adaptation options to address future cross-border climate impacts',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'In this module, we show how co-production techniques can be applied to developing socioeconomic scenarios and adaptation options and strategies in sub-global impact, adaptation, and vulnerability studies.' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
-  },
+    description: 'In this module, we show how co-production techniques can be applied to developing socioeconomic scenarios and adaptation options and strategies in sub-global impact, adaptation, and vulnerability studies.',
+    image: 'https://climatescenarios.org/share/og-kenya.jpg'
+  }),
   loading: { color: '#fff' },
   css: [
     '@/assets/style/base.scss'
