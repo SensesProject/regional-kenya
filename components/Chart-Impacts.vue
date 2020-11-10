@@ -14,8 +14,8 @@
       <g>
         <text :x="width / 2" :y="20" text-anchor="middle" class="rcp">Medium/high-end climate change (RCP 6.0)</text>
         <text :x="width / 2" :y="height - 20" text-anchor="middle" class="rcp" alignment-baseline="hanging" dominant-baseline="hanging">Low-end climate change (RCP2.6)</text>
-        <text :x="20" :y="height / 2" transform="rotate(-90)" :style="{ 'transform-origin': `${10}px ${height / 2}px` }" text-anchor="middle" class="col">Low-level regional collaboration</text>
-        <text :x="width - 20" :y="height / 2" transform="rotate(90)" :style="{ 'transform-origin': `${width - 10}px ${height / 2}px` }" text-anchor="middle" class="col">High-level regional collaboration</text>
+        <text :x="20" :y="height / 2" :transform="`rotate(-90, ${20}, ${height / 2})`" text-anchor="middle" class="col">Low-level regional collaboration</text>
+        <text :x="width - 20" :y="height / 2" :transform="`rotate(90, ${width - 20}, ${height / 2})`" text-anchor="middle" class="col">High-level regional collaboration</text>
       </g>
 
       <g>
@@ -64,7 +64,7 @@ export default {
   },
   computed: {
     radius () {
-      return (this.height - this.margin.top) / 2 - 20
+      return Math.max((this.height - this.margin.top) / 2 - 20, 0)
     },
     x1 () {
       return this.radius / 5 * 1.5
@@ -160,6 +160,8 @@ export default {
 
   .rcp, .col {
     @include headline-graphic();
+    // transform-box: fill-box;
+    // transform-box: view-box;
   }
 
 </style>
