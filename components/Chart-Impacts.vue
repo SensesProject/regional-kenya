@@ -22,7 +22,7 @@
         <Point :x="x" :y="y" :label="label" :key="key" v-for="{ x, y, key, label, color, angle } in points" :color="color" :data-test="angle" />
       </g>
     </svg>
-    <figcaption class="cap figcaption">Figure 5. Future cross-border climate impacts for Kenya across four transmission pathways and four scenarios</figcaption>
+    <figcaption class="cap figcaption">Figure 4. Future cross-border climate impacts for Kenya across four risk pathways and the four scenarios depicted in figure 1</figcaption>
   </figure>
 </template>
 

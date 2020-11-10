@@ -2,7 +2,7 @@
   <div class="container">
     <section class="step step--ssp">
       <IntersectionObserver :step="0" :noStyling="true" classes="isActive">
-        <p>Additionally, for each extended SSP, we used the SSP quantifications database (Riahi et al., 2017) to add quantitative projections on economic development (GDP) and population growth (Crespo Cuaresma, 2017; Kc & Lutz, 2017).</p>
+        <p>Additionally, for each extended SSP, we used the SSP quantifications database (Riahi et al., 2017) to add quantitative projections on economic development (GDP) and population growth for Kenya (Crespo Cuaresma, 2017; Kc & Lutz, 2017).</p>
       </IntersectionObserver>
       <IntersectionObserver :step="1" :noStyling="true" :classes="this.ssp === 'SSP1' ? 'isActive' : ''">
         <h3 class="ssp1">SSP 1: Sustainability</h3>
@@ -14,15 +14,15 @@
         <p>GDP growth is extremely low in the <em>Regional rivalry</em> scenario due to increasing conflicts, securitization of markets and lack of technologies and resources to assist the country for economic advancement.</p>
         <p>Population grows significantly in the <em>Regional rivalry</em> scenario. I Increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
       </IntersectionObserver>
+      <IntersectionObserver :step="4" :noStyling="true" :classes="this.ssp === 'SSP4' ? 'isActive' : ''">
+        <h3 class="ssp4">SSP 4: Inequality</h3>
+        <p>GDP growth is significantly slow in the <em>Inequality</em> scenario, indicating overall dysfunctional economic performance and ever-growing inequalities. </p>
+        <p>Population grows significantly in the <em>Inequality</em> scenario. Increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
+      </IntersectionObserver>
       <IntersectionObserver :step="5" :noStyling="true" :classes="this.ssp === 'SSP5' ? 'isActive' : ''">
         <h3 class="ssp5">SSP 5: Fossil-fueled development</h3>
         <p>GDP growth is exceptionally high in the <em>Fossil-fuelled development</em> scenario, due to increasing regional collaboration and partnership coupled with technological advancements which assist Kenya growing economically.</p>
         <p>Population remains steady in mid-term future and decreases slowly in the long run in the <em>Fossil-fuelled development</em> scenarios. Decreased population together with increasing GDP growth results in improved livelihood.</p>
-      </IntersectionObserver>
-      <IntersectionObserver :step="4" :noStyling="true" :classes="this.ssp === 'SSP4' ? 'isActive' : ''">
-        <h3 class="ssp4">SSP 4: Inequality</h3>
-        <p>GDP growth is significantly slow in the <em>Inequality</em> scenario, indicating overall dysfunctional economic performance and ever-growing inequalities.</p>
-        <p>Population grows significantly in the <em>Inequality</em> scenario. I Increased population coupled with slow GDP growth leads Kenya into technological backwardness, worsened inequalities, and escalating vulnerability to climate impacts.</p>
       </IntersectionObserver>
     </section>
     <ChartTimes />

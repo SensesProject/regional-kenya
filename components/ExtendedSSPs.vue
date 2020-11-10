@@ -21,7 +21,7 @@
       <img :src="`img/${ssp}.jpg`" />
     </figure>
     <figcaption class="cap figcaption">
-      Figure 2. Extended SSPs across climate change and regional collaboration axes. The visualizations were developed by <a href="http://www.letiarts.com/">Leti Arts</a>.
+      Figure 1. Extended SSPs across climate change and regional collaboration axes. The visualizations were developed by <a href="http://www.letiarts.com/" target="_blank">Leti Arts</a>.
     </figcaption>
   </figure>
 </template>

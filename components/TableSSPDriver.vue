@@ -5,10 +5,10 @@
         <thead>
           <tr>
             <th>Key drivers</th>
-            <th>SSP1: sustainability</th>
-            <th>SSP3: regional rivalry</th>
-            <th>SSP4: inequality</th>
-            <th>SSP5: fossil fuelled development</th>
+            <th>SSP1: Sustainability</th>
+            <th>SSP3: Regional rivalry</th>
+            <th>SSP4: Inequality</th>
+            <th>SSP5: Fossil fuelled development</th>
           </tr>
         </thead>
         <tbody>
@@ -64,7 +64,7 @@
         </tbody>
       </table>
       <figcaption class="cap figcaption">
-        Figure 1. The skeletons for the local and regional SSPs
+        Table 1. The skeletons for the local and regional SSPs
       </figcaption>
     </figure>
   </section>
