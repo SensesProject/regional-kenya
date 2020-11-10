@@ -90,26 +90,32 @@ export default {
           opacity: 1;
 
           h3 {
-            text-underline-offset: -5px;
-            text-decoration: underline;
-            text-decoration-thickness: 10px;
-            text-decoration-style: solid;
-            text-decoration-skip-ink: none;
+            // text-underline-offset: -5px;
+            // text-decoration: underline;
+            // text-decoration-thickness: 10px;
+            // text-decoration-style: solid;
+            // text-decoration-skip-ink: none;
+            display: inline-block;
+            line-height: 1;
+            margin-bottom: 0.4em;
 
             &.ssp1 {
-              text-decoration-color: getColor(green, 100);
+              background: linear-gradient(to top, getColor(green, 100) 7px, transparent 7px);
             }
 
             &.ssp3 {
-              text-decoration-color: getColor(red, 100);
+              // text-decoration-color: getColor(red, 100);
+              background: linear-gradient(to top, getColor(red, 100) 7px, transparent 7px);
             }
 
             &.ssp4 {
-              text-decoration-color: getColor(yellow, 100);
+              background: linear-gradient(to top, getColor(yellow, 100) 7px, transparent 7px);
+              // text-decoration-color: getColor(yellow, 100);
             }
 
             &.ssp5 {
-              text-decoration-color: getColor(violet, 100);
+              background: linear-gradient(to top, getColor(violet, 100) 7px, transparent 7px);
+              // text-decoration-color: getColor(violet, 100);
             }
           }
         }
