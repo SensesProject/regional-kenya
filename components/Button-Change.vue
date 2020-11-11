@@ -1,11 +1,11 @@
 <template>
   <div @click="toggleRCP" class="button-wrapper">
-    <span :class="{ isActive: rcp === '2.6' }">RCP 2.6</span>
+    <span :class="{ isActive: rcp === '2.6' }">RCP 2.6<br /><i>↓</i></span>
     <svg class="switch">
       <rect x="1" y="1" width="26" height="14" rx="7" ry="7" />
       <circle cy="8" cx="8" :class="{ isRight: rcp === '6.0' }" r="5" />
     </svg>
-    <span :class="{ isActive: rcp === '6.0' }">RCP 6.0</span>
+    <span :class="{ isActive: rcp === '6.0' }">RCP 6.0<br /><i>↓</i></span>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ export default {
   .switch {
     width: 28px;
     height: 16px;
-    margin-bottom: 0.5rem;
+    // margin-bottom: 0.5rem;
 
     rect {
       // stroke-width: 10px;
@@ -65,15 +65,23 @@ export default {
     // justify-items: center;
     grid-column-gap: 1rem;
     justify-content: center;
-    align-content: center;
 
     span {
+      margin-top: 1.1rem;
       color: $color-pale-gray;
       transition: color 0.5s;
       line-height: 1;
+      text-align: center;
+
+      i {
+        color: #fff;
+        transition: color 0.5s;
+      }
 
       &.isActive {
-        color: $color-neon;
+        &, i {
+          color: $color-neon;
+        }
       }
     }
   }

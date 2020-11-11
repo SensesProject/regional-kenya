@@ -23,8 +23,8 @@
     }
 
     @include query($medium) {
-      grid-column-start: 2;
-      grid-column-end: 5;
+      grid-column-start: 1;
+      grid-column-end: 4;
     }
 
     @include query($wide) {
@@ -71,8 +71,11 @@
 
       .columns {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 4rem;
+
+        @include query($medium) {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
     }
 
