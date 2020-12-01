@@ -14,8 +14,8 @@
         </g>
       </g>
       <g v-for="({ x1, x2, y1, y2, country, v1, v2 }) in elements">
-        <text :x="x1 - 5" :y="y1" text-anchor="end" dominant-baseline="middle" class="label label--base"><tspan>{{ country }}:</tspan><tspan> {{ v1 }}</tspan></text>
-        <text :x="x1 - 5" :y="y1" text-anchor="end" dominant-baseline="middle" class="label"><tspan>{{ country }}:</tspan><tspan> {{ v1 }}</tspan></text>
+        <text :x="x1 - 5" :y="y1" text-anchor="end" dominant-baseline="middle" class="label label--base" ref="labelLeftBase"><tspan>{{ country }}:</tspan><tspan> {{ v1 }}</tspan></text>
+        <text :x="x1 - 5" :y="y1" text-anchor="end" dominant-baseline="middle" class="label" ref="labelLeft" transform="translate(0, 0)"><tspan>{{ country }}:</tspan><tspan> {{ v1 }}</tspan></text>
         <text :x="x2 + 5" :y="y2" text-anchor="start" dominant-baseline="middle" class="label">{{ v2 }}</text>
         <!-- <circle :cx="x1" :cy="y1" r="2" />
         <circle :cx="x2" :cy="y2" r="2" /> -->
@@ -29,13 +29,58 @@
 import { mapState, mapGetters, mapActions } from 'vuex'
 import { scalePoint, scaleDiverging, scaleLinear } from 'd3-scale'
 import { interpolatePiYG } from 'd3-scale-chromatic'
-import { isUndefined, map, range, last, forEach, get } from 'lodash'
+import { isUndefined, map, range, last, forEach, get, round } from 'lodash'
 import { extent } from 'd3-array'
 import { timer } from 'd3-timer'
 import { format } from 'd3-format'
 import { interpolateNumber } from 'd3-interpolate'
 
 const f = format('.1f')
+
+function getTranslateY (el) {
+  const transform = el.getAttribute('transform')
+  if (transform === null) { return 0 }
+  return parseFloat(transform.match(/translate.*\((.+)\)/)[1].split(',')[1])
+}
+
+function placeLabels (labels) {
+  let move = 1
+  let count = 0
+  // console.log('placeLabels')
+  resetLabels(labels)
+  while (move > 0 && count < 100) {
+    move = 0
+    count += 1
+    forEach(labels, l1 => {
+      const { top: top1, height: height1, bottom: bottom1 } = l1.getBoundingClientRect()
+      forEach(labels, l2 => {
+        if (l1 !== l2) {
+          const { top: top2, height: height2, bottom: bottom2 } = l2.getBoundingClientRect()
+          if ((Math.abs(top1 - top2) * 2 < (height1 + height2))) {
+            const dy = ((Math.max(0, bottom1 - top2) + Math.min(0, top1 - bottom2))) * 0.1
+            move += Math.abs(dy)
+            l1.setAttribute('transform', `translate(0, ${getTranslateY(l1) + dy})`)
+            l2.setAttribute('transform', `translate(0, ${getTranslateY(l2) - dy})`)
+            // console.log(dy, l1.textContent, l2.textContent)
+            // if (dy < 0) {
+            //   l1.setAttribute('transform', `translate(0, ${getTranslateY(l1) + dy})`)
+            //   l2.setAttribute('transform', `translate(0, ${getTranslateY(l2) - dy})`)
+            // } else {
+            //   l1.setAttribute('transform', `translate(0, ${getTranslateY(l1) - dy})`)
+            //   l2.setAttribute('transform', `translate(0, ${getTranslateY(l2) + dy})`)
+            // }
+          }
+        }
+      })
+    })
+  }
+}
+
+function resetLabels (labels) {
+  forEach(labels, label => {
+    label.setAttribute('transform', `translate(0, 0)`)
+  })
+}
 
 export default {
   props: ['type'],
@@ -111,18 +156,6 @@ export default {
           v2: f(v2)
         }
       })
-      return map(drivers, ([label, x, y, isDriver], i) => {
-        return {
-          label,
-          isActive: this.drivers[i],
-          isDriver,
-          i,
-          x: Math.round(this.scaleX(x)),
-          y: Math.round(this.scaleY(y)),
-          cx: x,
-          cy: y
-        }
-      })
     },
     ticks () {
       return map(this.scaleY.ticks(4), tick => {
@@ -158,13 +191,25 @@ export default {
         const height = el.clientHeight || el.parentNode.clientHeight
         this.width = width
         this.height = height
+        placeLabels(this.$refs.labelLeft)
+        placeLabels(this.$refs.labelLeftBase)
       }
+    },
+    correctLabelPosition () {
+      placeLabels(this.$refs.labelLeft)
+      placeLabels(this.$refs.labelLeftBase)
     }
   },
   watch: {
     rcp (o, n) {
+      resetLabels(this.$refs.labelLeft)
+      resetLabels(this.$refs.labelLeftBase)
+
       const t = timer((elapsed) => {
-        if (elapsed >= 500) { t.stop() }
+        if (elapsed >= 500) {
+          t.stop()
+          this.correctLabelPosition();
+        }
         const progress = elapsed / 500
         this.s = n === '2.6' ? 1 - progress : progress
         // console.log(progress, elapsed);
@@ -209,6 +254,7 @@ export default {
 
   text.label {
     fill: $color-dark-gray;
+    // transition: transform 0.2s;
 
     tspan:first-child {
       fill: #222;
