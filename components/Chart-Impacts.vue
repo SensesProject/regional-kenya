@@ -72,8 +72,8 @@ export default {
     x2 () {
       return this.radius / 5 * 4.5
     },
-    ...mapState('vision', [
-      'visions'
+    ...mapState('impacts', [
+      'impacts'
     ]),
     scaleScope () {
       return scalePoint()
@@ -87,7 +87,7 @@ export default {
     },
     points () {
       const points = []
-      forEach(this.visions, ([coords, title, text]) => {
+      forEach(this.impacts, ([coords, title, text]) => {
         for (let i = 0; i < coords.length; i += 2) {
           const scope = coords[i]
           const r = this.scaleScope(scope)

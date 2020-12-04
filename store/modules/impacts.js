@@ -1,4 +1,4 @@
-const visions = [
+const impacts = [
   [[4, 35, 4, 210], 'Climate-induced migration', 'Climate-induced migration across borders refers to movement of people driven by extreme or progressive changes in the weather or climate, as well as the impact of climate change on economy and increasing unemployment in the neighbouring countries.'],
   [[4, 15, 4, 190, 4, 330], 'Regional conflicts', 'Increased regional conflict is primarily due to climate change impacting Kenya’s neighbouring countries in the shape of job loss, damage to infrastructure and settlements and scarcity of natural resources. As vulnerable groups cross the borders and enter Kenya in search of better livelihoods, regional conflicts, especially between local communities living along borders, will be intensified.'],
   [[4, 50], 'Unsustainable tourism', 'Kenya has shared ecosystems with its neighbors, with many national parks and reserves being interconnected and dispersed along two or even more countries (e.g. the Serengeti-Mara ecosystem between Tanzania and Kenya). Expansion of nature tourism in neighbouring countries without considerations for environmental conservation and evidence-based environmental policies was identified as an impact that might severely affect Kenya and its parts of the shared ecosystems.'],
@@ -18,7 +18,7 @@ const visions = [
 
 const state = () => {
   return {
-    visions,
+    impacts,
   }
 }
 
